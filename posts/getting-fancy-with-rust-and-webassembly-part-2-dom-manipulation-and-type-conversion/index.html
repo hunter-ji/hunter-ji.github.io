@@ -1,0 +1,525 @@
+<!doctype html><html lang=en dir=ltr><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><meta name=description content="Rust and WebAssembly integration for web development extends beyond basic functionality to include DOM manipulation and efficient type handling."><title>Getting Fancy with Rust and WebAssembly (Part 2) - DOM Manipulation and Type Conversion</title><link rel=canonical href=https://hunterji.com/posts/getting-fancy-with-rust-and-webassembly-part-2-dom-manipulation-and-type-conversion/><link rel=stylesheet href=/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css><meta property='og:title' content="Getting Fancy with Rust and WebAssembly (Part 2) - DOM Manipulation and Type Conversion"><meta property='og:description' content="Rust and WebAssembly integration for web development extends beyond basic functionality to include DOM manipulation and efficient type handling."><meta property='og:url' content='https://hunterji.com/posts/getting-fancy-with-rust-and-webassembly-part-2-dom-manipulation-and-type-conversion/'><meta property='og:site_name' content='Hunter Ji'><meta property='og:type' content='article'><meta property='article:section' content='Post'><meta property='article:tag' content='WebAssembly'><meta property='article:tag' content='Rust'><meta property='article:published_time' content='2023-06-14T00:00:00+00:00'><meta property='article:modified_time' content='2023-06-14T00:00:00+00:00'><meta property='og:image' content='https://hunterji.com/posts/getting-fancy-with-rust-and-webassembly-part-2-dom-manipulation-and-type-conversion/cover.jpg'><meta name=twitter:title content="Getting Fancy with Rust and WebAssembly (Part 2) - DOM Manipulation and Type Conversion"><meta name=twitter:description content="Rust and WebAssembly integration for web development extends beyond basic functionality to include DOM manipulation and efficient type handling."><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content='https://hunterji.com/posts/getting-fancy-with-rust-and-webassembly-part-2-dom-manipulation-and-type-conversion/cover.jpg'><link rel="shortcut icon" href=/favicon.png></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label="Toggle Menu">
+<span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=/><img src=/img/avatar_hu13765127513111647749.png width=300 height=300 class=site-logo loading=lazy alt=Avatar>
+</a><span class=emoji>🥤</span></figure><div class=site-meta><h1 class=site-name><a href=/>Hunter Ji</a></h1><h2 class=site-description>Developer × Design Learner</h2></div></header><ol class=menu-social><li><a href=https://github.com/hunter-ji target=_blank title=GitHub rel=me><svg class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li><li><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank title=Instagram rel=me><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8a4 4 0 014-4h8a4 4 0 014 4v8a4 4 0 01-4 4H8a4 4 0 01-4-4z"/><path d="M9 12a3 3 0 106 0 3 3 0 00-6 0"/><path d="M16.5 7.5v.01"/></svg></a></li><li><a href=https://www.reddit.com/user/Careless_Tomorrow127/ target=_blank title=Reddit rel=me><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-reddit"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 8c2.648.0 5.028.826 6.675 2.14a2.5 2.5.0 012.326 4.36c0 3.59-4.03 6.5-9 6.5-4.875.0-8.845-2.8-9-6.294l-1-.206a2.5 2.5.0 012.326-4.36C5.973 8.827 8.353 8 11.001 8z"/><path d="M12 8l1-5 6 1"/><path d="M19 4m-1 0a1 1 0 102 0 1 1 0 10-2 0"/><circle cx="9" cy="13" r=".5" fill="currentcolor"/><circle cx="15" cy="13" r=".5" fill="currentcolor"/><path d="M10 17c.667.333 1.333.5 2 .5s1.333-.167 2-.5"/></svg></a></li><li><a href='https://x.com/intent/follow?screen_name=hi_hunterji' target=_blank title=X rel=me><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4l11.733 16H20L8.267 4z"/><path d="M4 20l6.768-6.768m2.46-2.46L20 4"/></svg></a></li><li><a href=https://www.youtube.com/@HiHunterJi target=_blank title=YouTube rel=me><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-youtube"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M2 8a4 4 0 014-4h12a4 4 0 014 4v8a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><path d="M10 9l5 3-5 3z"/></svg></a></li></ol><ol class=menu id=main-menu><li><a href=/><svg class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
+<span>Home</span></a></li><li><a href=/archives/><svg class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<span>Archives</span></a></li><li><a href=/search/><svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+<span>Search</span></a></li><li class=menu-bottom-section><ol class=menu><li id=i18n-switch><svg class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 5h7"/><path d="M9 3v2c0 4.418-2.239 8-5 8"/><path d="M5 9c-.003 2.144 2.952 3.908 6.7 4"/><path d="M12 20l4-9 4 9"/><path d="M19.1 18h-6.2"/></svg>
+<select name=language title=language onchange="window.location.href=this.selectedOptions[0].value"><option value=https://hunterji.com/ selected>English</option><option value=https://hunterji.com/zh-cn/>简体中文</option></select></li><li id=dark-mode-toggle><svg class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<svg class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<span>Dark Mode</span></li></ol></li></ol></aside><aside class="sidebar right-sidebar sticky"><section class="widget archives"><div class=widget-icon><svg class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title">Table of contents</h2><div class=widget--toc><nav id=TableOfContents><ol><li><a href=#introduction>Introduction</a></li><li><a href=#environment>Environment</a></li><li><a href=#dom>DOM</a><ol><li><a href=#1-configuring-dependencies>1. Configuring Dependencies</a></li><li><a href=#2-getting-the-document>2. Getting the Document</a></li><li><a href=#3-manipulating-elements>3. Manipulating Elements</a></li><li><a href=#4-compilation>4. Compilation</a></li><li><a href=#5-calling-in-html>5. Calling in HTML</a></li><li><a href=#6-verification-in-browser>6. Verification in Browser</a></li><li><a href=#7-discovering-more-methods>7. Discovering More Methods</a></li></ol></li><li><a href=#type-conversion-between-rust-and-js>Type Conversion Between Rust and JS</a><ol><li><a href=#1-basic-types>1. Basic Types</a></li><li><a href=#2-basic-type-conversion-example>2. Basic Type Conversion Example</a></li><li><a href=#3-generic-type>3. Generic Type</a></li><li><a href=#4-result>4. Result</a><ol><li><a href=#41-using-result-to-return-errors>4.1 Using Result to Return Errors</a></li><li><a href=#42-using-result-to-return-normal-values-and-errors>4.2 Using Result to Return Normal Values and Errors</a></li></ol></li><li><a href=#5-directly-importing-js-types>5. Directly Importing JS Types</a><ol><li><a href=#51-configuring-dependencies>5.1 Configuring Dependencies</a></li><li><a href=#52-uint8array>5.2 Uint8Array</a></li><li><a href=#53-date>5.3 Date</a></li></ol></li></ol></li><li><a href=#conclusion>Conclusion</a></li></ol></nav></div></section></aside><main class="main full-width"><article class="has-image main-article"><header class=article-header><div class=article-image><a href=/posts/getting-fancy-with-rust-and-webassembly-part-2-dom-manipulation-and-type-conversion/><img src=/posts/getting-fancy-with-rust-and-webassembly-part-2-dom-manipulation-and-type-conversion/cover_hu3971527518416831236.jpg srcset="/posts/getting-fancy-with-rust-and-webassembly-part-2-dom-manipulation-and-type-conversion/cover_hu3971527518416831236.jpg 800w, /posts/getting-fancy-with-rust-and-webassembly-part-2-dom-manipulation-and-type-conversion/cover_hu15167486291861407916.jpg 1600w" width=800 height=526 loading=lazy alt="Featured image of post Getting Fancy with Rust and WebAssembly (Part 2) - DOM Manipulation and Type Conversion"></a></div><div class=article-details><header class=article-category><a href=/categories/develop/ style=background-color:#303030;color:#fff>Develop</a></header><div class=article-title-wrapper><h2 class=article-title><a href=/posts/getting-fancy-with-rust-and-webassembly-part-2-dom-manipulation-and-type-conversion/>Getting Fancy with Rust and WebAssembly (Part 2) - DOM Manipulation and Type Conversion</a></h2><h3 class=article-subtitle>Rust and WebAssembly integration for web development extends beyond basic functionality to include DOM manipulation and efficient type handling.</h3></div><footer class=article-time><div><svg class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>Jun 14, 2023</time></div><div><svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--reading>12 minute read</time></div></footer><footer class=article-translations><svg class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 5h7"/><path d="M9 3v2c0 4.418-2.239 8-5 8"/><path d="M5 9c-.003 2.144 2.952 3.908 6.7 4"/><path d="M12 20l4-9 4 9"/><path d="M19.1 18h-6.2"/></svg><div><a href=https://hunterji.com/zh-cn/posts/%E4%BD%BF%E7%94%A8rust%E5%92%8Cwebassembly%E6%95%B4%E8%8A%B1%E6%B4%BB%E5%84%BF%E4%BA%8Cdom%E5%92%8C%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/ class=link>简体中文</a></div></footer></div></header><section class=article-content><h2 id=introduction>Introduction</h2><p>In the previous article <a class=link href=https://hunterji.com/blog/getting-fancy-with-rust-and-webAssembly-1 target=_blank rel=noopener>&ldquo;Getting Fancy with Rust and WebAssembly (Part 1) - Quick Start&rdquo;</a>, we described how to create a project and quickly generate wasm for use in the frontend, taking the first step towards creating cool stuff.</p><p>When developing web applications, Wasm modules written in Rust can provide higher performance and better security. However, to integrate with existing JavaScript code, interaction between Rust and JS must be implemented. The main purpose of Rust-JS interaction is to combine the strengths of both languages to achieve better web applications.</p><p>In this article, we will continue development based on the project created in the previous article.</p><h2 id=environment>Environment</h2><ul><li>Rust 1.70.0</li><li>wasm-bindgen 0.2.87</li><li>web-sys 0.3.64</li></ul><h2 id=dom>DOM</h2><h3 id=1-configuring-dependencies>1. Configuring Dependencies</h3><p>To manipulate the DOM, we need to introduce a new dependency <code>web-sys</code>. Therefore, you can configure the dependencies in <code>Cargo.toml</code> as follows:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-toml data-lang=toml><span class=line><span class=cl><span class=p>[</span><span class=nx>dependencies</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=nx>wasm-bindgen</span> <span class=p>=</span> <span class=s2>&#34;0.2.87&#34;</span>
+</span></span><span class=line><span class=cl><span class=nx>web-sys</span> <span class=p>=</span> <span class=p>{</span> <span class=nx>version</span> <span class=p>=</span> <span class=s2>&#34;0.3.64&#34;</span><span class=p>,</span> <span class=nx>features</span> <span class=p>=</span> <span class=p>[]</span> <span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>You might be curious about what this <code>features</code> is. To be honest, I was very curious at first and didn&rsquo;t see any special explanation. I found out through trial and error that you need to manually import feature dependencies&mldr; For example, if you need to use JS&rsquo;s <code>console</code> in Rust, you need to add <code>console</code> to <code>features</code>.</p><h3 id=2-getting-the-document>2. Getting the Document</h3><p>To use <code>Document</code> in Rust, we need to add <code>features</code> as explained in the previous step. There&rsquo;s a dependency relationship here: first, we need to get the <code>window</code> in Rust, and then get the <code>document</code>.</p><p>Therefore, after adding <code>features</code>, it looks like this:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-toml data-lang=toml><span class=line><span class=cl><span class=p>[</span><span class=nx>dependencies</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=nx>wasm-bindgen</span> <span class=p>=</span> <span class=s2>&#34;0.2.87&#34;</span>
+</span></span><span class=line><span class=cl><span class=nx>web-sys</span> <span class=p>=</span> <span class=p>{</span> <span class=nx>version</span> <span class=p>=</span> <span class=s2>&#34;0.3.64&#34;</span><span class=p>,</span> <span class=nx>features</span> <span class=p>=</span> <span class=p>[</span><span class=s2>&#34;Window&#34;</span><span class=p>,</span> <span class=s2>&#34;Document&#34;</span><span class=p>]</span> <span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>Then create a function in <code>lib.rs</code> to call <code>document</code>:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=cp>#[wasm_bindgen]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>pub</span><span class=w> </span><span class=k>fn</span> <span class=nf>update_message</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>window</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>web_sys</span>::<span class=n>window</span><span class=p>().</span><span class=n>expect</span><span class=p>(</span><span class=s>&#34;Failed to load window&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>document</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>window</span><span class=p>.</span><span class=n>document</span><span class=p>().</span><span class=n>expect</span><span class=p>(</span><span class=s>&#34;Failed to load document&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><p>Now we have unlocked <code>document</code> in Rust, so we can do whatever we want in the frontend!</p><h3 id=3-manipulating-elements>3. Manipulating Elements</h3><p>Let&rsquo;s start manipulating. First, we need to get the <code>Element</code>&mldr;&mldr;</p><p>Yes, you guessed it right, let&rsquo;s continue to add <code>features</code>. Here we need to add an <code>Element</code>:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-toml data-lang=toml><span class=line><span class=cl><span class=p>[</span><span class=nx>dependencies</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=nx>wasm-bindgen</span> <span class=p>=</span> <span class=s2>&#34;0.2.87&#34;</span>
+</span></span><span class=line><span class=cl><span class=nx>web-sys</span> <span class=p>=</span> <span class=p>{</span> <span class=nx>version</span> <span class=p>=</span> <span class=s2>&#34;0.3.64&#34;</span><span class=p>,</span> <span class=nx>features</span> <span class=p>=</span> <span class=p>[</span><span class=s2>&#34;Window&#34;</span><span class=p>,</span> <span class=s2>&#34;Document&#34;</span><span class=p>,</span> <span class=s2>&#34;Element&#34;</span><span class=p>]</span> <span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>OK, let&rsquo;s continue. Here we set the function to take two parameters <code>selector</code> and <code>message</code>, then get the element through <code>selector</code>, and update the value to the value of the <code>message</code> parameter. The complete function is as follows:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=cp>#[wasm_bindgen]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>pub</span><span class=w> </span><span class=k>fn</span> <span class=nf>update_message</span><span class=p>(</span><span class=n>selector</span>: <span class=kp>&amp;</span><span class=kt>str</span><span class=p>,</span><span class=w> </span><span class=n>message</span>: <span class=kp>&amp;</span><span class=kt>str</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>window</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>web_sys</span>::<span class=n>window</span><span class=p>().</span><span class=n>expect</span><span class=p>(</span><span class=s>&#34;Failed to load window&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>document</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>window</span><span class=p>.</span><span class=n>document</span><span class=p>().</span><span class=n>expect</span><span class=p>(</span><span class=s>&#34;Failed to load document&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>element</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>document</span><span class=p>.</span><span class=n>query_selector</span><span class=p>(</span><span class=n>selector</span><span class=p>).</span><span class=n>expect</span><span class=p>(</span><span class=s>&#34;Failed to load element&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>if</span><span class=w> </span><span class=kd>let</span><span class=w> </span><span class=nb>Some</span><span class=p>(</span><span class=n>element</span><span class=p>)</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>element</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>element</span><span class=p>.</span><span class=n>set_inner_html</span><span class=p>(</span><span class=n>message</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w> </span><span class=k>else</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=fm>panic!</span><span class=p>(</span><span class=s>&#34;Failed to set inner html&#34;</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><h3 id=4-compilation>4. Compilation</h3><p>Compile the completed Rust project into wasm:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>wasm-pack build --target web
+</span></span></code></pre></td></tr></table></div></div><h3 id=5-calling-in-html>5. Calling in HTML</h3><p>Based on the HTML from the project in the previous article, add a <code>div</code> here with id <code>message</code>, and add a call to the wasm <code>update_message</code> function. The code is as follows:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>body</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>div</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;message&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>body</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>script</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;module&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=kr>import</span> <span class=nx>init</span><span class=p>,</span> <span class=p>{</span> <span class=nx>update_message</span> <span class=p>}</span> <span class=nx>from</span> <span class=s1>&#39;./pkg/hello_wasm.js&#39;</span><span class=p>;</span> <span class=c1>// 引入update_message函数
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=nx>run</span> <span class=o>=</span> <span class=kr>async</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=kr>await</span> <span class=nx>init</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=nx>update_message</span><span class=p>(</span><span class=s1>&#39;#message&#39;</span><span class=p>,</span> <span class=s1>&#39;&lt;h1&gt;Hello, Rust!&lt;/h1&gt;&#39;</span><span class=p>);</span> <span class=c1>// 调用update_message函数
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nx>run</span><span class=p>();</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=6-verification-in-browser>6. Verification in Browser</h3><p>Start an HTTP server, then view it in the browser. You can see an <code>h1</code> tag with <code>Hello, Rust!</code> appearing on the page.</p><h3 id=7-discovering-more-methods>7. Discovering More Methods</h3><p>As you write according to the article, you might notice a problem - why aren&rsquo;t these methods auto-completing?!</p><p>Yes, that&rsquo;s right, (at least I found that) currently <code>web-sys</code> doesn&rsquo;t have auto-completion, so we can only develop by combining developers&rsquo; excellent frontend skills and the rich <a class=link href=https://rustwasm.github.io/wasm-bindgen/api/web_sys/ target=_blank rel=noopener>official documentation</a>.</p><h2 id=type-conversion-between-rust-and-js>Type Conversion Between Rust and JS</h2><p>For wasm, performance is certainly improved, but type conversion has always been an issue. When a large amount of data needs to be type-converted in wasm/js, it&rsquo;s really a disaster for performance. I encountered this problem when developing wasm with Go before, where I needed to use official methods for manual type conversion, but wasm was dealing with a very large amount of data&mldr;&mldr;</p><p>Fortunately, Rust&rsquo;s type support is really rich!</p><h3 id=1-basic-types>1. Basic Types</h3><p>Basic types are quite simple, and Rust&rsquo;s generics also support many types well. Here&rsquo;s a mapping table of basic types:</p><ul><li>i8: number</li><li>i16: number</li><li>i32: number</li><li>i64: BigInt</li><li>u8: number</li><li>u16: number</li><li>u32: number</li><li>u64: BigInt</li><li>f32: number</li><li>f64: number</li><li>bool: boolean</li><li>char: string</li><li>&amp;str: string</li><li>String: string</li><li>&[T] (e.g.: &[u8]): [T] (e.g.: Uint8Array)</li><li>Vec&lt;T>: Array</li></ul><h3 id=2-basic-type-conversion-example>2. Basic Type Conversion Example</h3><p>In the <code>lib.rs</code> file, create a function that takes a few types as parameters, then reads and prints them:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=cp>#[wasm_bindgen]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>pub</span><span class=w> </span><span class=k>fn</span> <span class=nf>print_values</span><span class=p>(</span><span class=n>js_number</span>: <span class=kt>i32</span><span class=p>,</span><span class=w> </span><span class=n>js_boolean</span>: <span class=kt>bool</span><span class=p>,</span><span class=w> </span><span class=n>js_uint8_array</span>: <span class=kp>&amp;</span><span class=p>[</span><span class=kt>u8</span><span class=p>],</span><span class=w> </span><span class=n>js_number_array</span>: <span class=nb>Vec</span><span class=o>&lt;</span><span class=kt>i32</span><span class=o>&gt;</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=fm>println!</span><span class=p>(</span><span class=s>&#34;js number: </span><span class=si>{}</span><span class=s>&#34;</span><span class=p>,</span><span class=w> </span><span class=n>js_number</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=fm>println!</span><span class=p>(</span><span class=s>&#34;js boolean: </span><span class=si>{}</span><span class=s>&#34;</span><span class=p>,</span><span class=w> </span><span class=n>js_boolean</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>for</span><span class=w> </span><span class=n>item</span><span class=w> </span><span class=k>in</span><span class=w> </span><span class=n>js_uint8_array</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=fm>println!</span><span class=p>(</span><span class=s>&#34;js Uint8Array item: </span><span class=si>{}</span><span class=s>&#34;</span><span class=p>,</span><span class=w> </span><span class=n>item</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>for</span><span class=w> </span><span class=n>item</span><span class=w> </span><span class=k>in</span><span class=w> </span><span class=n>js_number_array</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=fm>println!</span><span class=p>(</span><span class=s>&#34;js number array item: </span><span class=si>{}</span><span class=s>&#34;</span><span class=p>,</span><span class=w> </span><span class=n>item</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><p>You can see that this function takes four types of parameters from JS: <code>number</code>, <code>boolean</code>, <code>Uint8Array</code>, and <code>Array</code>.</p><p>Then compile:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>wasm-pack build --target web
+</span></span></code></pre></td></tr></table></div></div><p>Next, import the function and call it in the frontend:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>script</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;module&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=kr>import</span> <span class=nx>init</span><span class=p>,</span> <span class=p>{</span> <span class=nx>print_values</span> <span class=p>}</span> <span class=nx>from</span> <span class=s1>&#39;./pkg/hello_wasm.js&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=nx>run</span> <span class=o>=</span> <span class=kr>async</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=kr>await</span> <span class=nx>init</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=kr>const</span> <span class=nx>jsNumber</span> <span class=o>=</span> <span class=mi>10</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=kr>const</span> <span class=nx>jsBoolean</span> <span class=o>=</span> <span class=kc>true</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=kr>const</span> <span class=nx>jsUint8Array</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>Uint8Array</span><span class=p>(</span><span class=mi>3</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=nx>jsUint8Array</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=nx>jsUint8Array</span><span class=p>[</span><span class=mi>1</span><span class=p>]</span> <span class=o>=</span> <span class=mi>2</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=nx>jsUint8Array</span><span class=p>[</span><span class=mi>2</span><span class=p>]</span> <span class=o>=</span> <span class=mi>3</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=kr>const</span> <span class=nx>jsNumberArray</span> <span class=o>=</span> <span class=p>[</span><span class=mi>30</span><span class=p>,</span> <span class=mi>40</span><span class=p>,</span> <span class=mi>50</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=nx>print_values</span><span class=p>(</span><span class=nx>jsNumber</span><span class=p>,</span> <span class=nx>jsBoolean</span><span class=p>,</span> <span class=nx>jsUint8Array</span><span class=p>,</span> <span class=nx>jsNumberArray</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nx>run</span><span class=p>();</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><p>Finally, start the HTTP server and open the browser, and in the console you can see&mldr; you can&rsquo;t see?!</p><p>Yes, that&rsquo;s right, Rust&rsquo;s <code>println!</code> will only send the printed content to Rust&rsquo;s standard output stream, not the frontend&rsquo;s console. If you want to print in the console, you need to call JS&rsquo;s <code>console</code>.</p><p>To use the new functionality, the first step is to add <code>features</code>. Add <code>console</code> to <code>Cargo.toml</code> as follows:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-toml data-lang=toml><span class=line><span class=cl><span class=p>[</span><span class=nx>dependencies</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=nx>wasm-bindgen</span> <span class=p>=</span> <span class=s2>&#34;0.2.87&#34;</span>
+</span></span><span class=line><span class=cl><span class=nx>web-sys</span> <span class=p>=</span> <span class=p>{</span> <span class=nx>version</span> <span class=p>=</span> <span class=s2>&#34;0.3.64&#34;</span><span class=p>,</span> <span class=nx>features</span> <span class=p>=</span> <span class=p>[</span><span class=s2>&#34;Window&#34;</span><span class=p>,</span> <span class=s2>&#34;Document&#34;</span><span class=p>,</span> <span class=s2>&#34;Element&#34;</span><span class=p>,</span> <span class=s2>&#34;console&#34;</span><span class=p>]</span> <span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>Calling <code>console.log()</code> in Rust is as follows:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=n>web_sys</span>::<span class=n>console</span>::<span class=n>log_1</span><span class=p>(</span><span class=o>&amp;</span><span class=s>&#34;Hello, Rust!&#34;</span><span class=p>.</span><span class=n>into</span><span class=p>());</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><p>Here we encapsulate it into a function:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=k>fn</span> <span class=nf>console_log</span><span class=p>(</span><span class=n>message</span>: <span class=nb>String</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>web_sys</span>::<span class=n>console</span>::<span class=n>log_1</span><span class=p>(</span><span class=o>&amp;</span><span class=n>message</span><span class=p>.</span><span class=n>into</span><span class=p>());</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><p>Then, change the <code>println</code> in the example function to <code>console_log()</code> and <code>format!</code>. The function code is as follows:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=cp>#[wasm_bindgen]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>pub</span><span class=w> </span><span class=k>fn</span> <span class=nf>print_values</span><span class=p>(</span><span class=n>js_number</span>: <span class=kt>i32</span><span class=p>,</span><span class=w> </span><span class=n>js_boolean</span>: <span class=kt>bool</span><span class=p>,</span><span class=w> </span><span class=n>js_uint8_array</span>: <span class=kp>&amp;</span><span class=p>[</span><span class=kt>u8</span><span class=p>],</span><span class=w> </span><span class=n>js_number_array</span>: <span class=nb>Vec</span><span class=o>&lt;</span><span class=kt>i32</span><span class=o>&gt;</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>console_log</span><span class=p>(</span><span class=fm>format!</span><span class=p>(</span><span class=s>&#34;js number: </span><span class=si>{}</span><span class=s>&#34;</span><span class=p>,</span><span class=w> </span><span class=n>js_number</span><span class=p>));</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>console_log</span><span class=p>(</span><span class=fm>format!</span><span class=p>(</span><span class=s>&#34;js boolean: </span><span class=si>{}</span><span class=s>&#34;</span><span class=p>,</span><span class=w> </span><span class=n>js_boolean</span><span class=p>));</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>for</span><span class=w> </span><span class=n>item</span><span class=w> </span><span class=k>in</span><span class=w> </span><span class=n>js_uint8_array</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>console_log</span><span class=p>(</span><span class=fm>format!</span><span class=p>(</span><span class=s>&#34;js Uint8Array item: </span><span class=si>{}</span><span class=s>&#34;</span><span class=p>,</span><span class=w> </span><span class=n>item</span><span class=p>));</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>for</span><span class=w> </span><span class=n>item</span><span class=w> </span><span class=k>in</span><span class=w> </span><span class=n>js_number_array</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>console_log</span><span class=p>(</span><span class=fm>format!</span><span class=p>(</span><span class=s>&#34;js number array item: </span><span class=si>{}</span><span class=s>&#34;</span><span class=p>,</span><span class=w> </span><span class=n>item</span><span class=p>));</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><p>Finally, after compiling, open the browser, and you can see the output in the console:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>js number: 10
+</span></span><span class=line><span class=cl>js boolean: true
+</span></span><span class=line><span class=cl>js Uint8Array item: 1
+</span></span><span class=line><span class=cl>js Uint8Array item: 2
+</span></span><span class=line><span class=cl>js Uint8Array item: 3
+</span></span><span class=line><span class=cl>js number array item: 30
+</span></span><span class=line><span class=cl>js number array item: 40
+</span></span><span class=line><span class=cl>js number array item: 50
+</span></span></code></pre></td></tr></table></div></div><h3 id=3-generic-type>3. Generic Type</h3><p>Rust provides a generic type - JsValue, which can be used as any JS type.</p><p>Here&rsquo;s a simple example, setting up a function that takes <code>JsValue</code> as a parameter and prints it.</p><p>Create the function:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=cp>#[wasm_bindgen]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>pub</span><span class=w> </span><span class=k>fn</span> <span class=nf>print_js_value</span><span class=p>(</span><span class=n>val</span>: <span class=nc>JsValue</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>console_log</span><span class=p>(</span><span class=fm>format!</span><span class=p>(</span><span class=s>&#34;</span><span class=si>{:?}</span><span class=s>&#34;</span><span class=p>,</span><span class=w> </span><span class=n>val</span><span class=p>));</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><p>Then compile it into a wasm file.</p><p>Call it in HTML:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>script</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;module&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=kr>import</span> <span class=nx>init</span><span class=p>,</span> <span class=p>{</span> <span class=nx>print_js_value</span> <span class=p>}</span> <span class=nx>from</span> <span class=s1>&#39;./pkg/hello_wasm.js&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=nx>run</span> <span class=o>=</span> <span class=kr>async</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=kr>await</span> <span class=nx>init</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=kr>const</span> <span class=nx>jsNumber</span> <span class=o>=</span> <span class=mi>10</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=kr>const</span> <span class=nx>jsBoolean</span> <span class=o>=</span> <span class=kc>true</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=kr>const</span> <span class=nx>jsUint8Array</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>Uint8Array</span><span class=p>(</span><span class=mi>3</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=nx>jsUint8Array</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=nx>jsUint8Array</span><span class=p>[</span><span class=mi>1</span><span class=p>]</span> <span class=o>=</span> <span class=mi>2</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=nx>jsUint8Array</span><span class=p>[</span><span class=mi>2</span><span class=p>]</span> <span class=o>=</span> <span class=mi>3</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=kr>const</span> <span class=nx>jsNumberArray</span> <span class=o>=</span> <span class=p>[</span><span class=mi>30</span><span class=p>,</span> <span class=mi>40</span><span class=p>,</span> <span class=mi>50</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=nx>print_js_value</span><span class=p>(</span><span class=nx>jsNumber</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=nx>print_js_value</span><span class=p>(</span><span class=nx>jsBoolean</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=nx>print_js_value</span><span class=p>(</span><span class=nx>jsUint8Array</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=nx>print_js_value</span><span class=p>(</span><span class=nx>jsNumberArray</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nx>run</span><span class=p>();</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><p>In the HTML, different types of parameters are passed in, but in the browser&rsquo;s console, you can see that all different types of parameters are printed:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>JsValue(10)
+</span></span><span class=line><span class=cl>JsValue(true)
+</span></span><span class=line><span class=cl>JsValue(Uint8Array)
+</span></span><span class=line><span class=cl>JsValue([30, 40, 50])
+</span></span></code></pre></td></tr></table></div></div><h3 id=4-result>4. Result</h3><p><code>Result</code> is a very important existence in Rust. If you often write Rust, you don&rsquo;t want to change your development habits when writing WebAssembly.</p><p>For JS, <code>Result</code> can be directly caught in <code>catch</code>, but here we need to define the parameter types well.</p><h4 id=41-using-result-to-return-errors>4.1 Using Result to Return Errors</h4><p>First, let&rsquo;s look at a scenario that only returns errors:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=cp>#[wasm_bindgen]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>pub</span><span class=w> </span><span class=k>fn</span> <span class=nf>only_return_error_when_result</span><span class=p>(</span><span class=n>count</span>: <span class=kt>i32</span><span class=p>)</span><span class=w> </span>-&gt; <span class=nb>Result</span><span class=o>&lt;</span><span class=p>(),</span><span class=w> </span><span class=n>JsError</span><span class=o>&gt;</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>if</span><span class=w> </span><span class=n>count</span><span class=w> </span><span class=o>&gt;</span><span class=w> </span><span class=mi>10</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nb>Ok</span><span class=p>(())</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w> </span><span class=k>else</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nb>Err</span><span class=p>(</span><span class=n>JsError</span>::<span class=n>new</span><span class=p>(</span><span class=s>&#34;count &lt; 10&#34;</span><span class=p>))</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><p>Here the return type is <code>Result</code>, but it only returns an error. It&rsquo;s worth noting that the error type used here is <code>JsError</code>, of course, <code>JsValue</code> can also be used here.</p><p>Then call it in HTML:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>script</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;module&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=kr>import</span> <span class=nx>init</span><span class=p>,</span> <span class=p>{</span> <span class=nx>only_return_error_when_result</span> <span class=p>}</span> <span class=nx>from</span> <span class=s1>&#39;./pkg/hello_wasm.js&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=nx>run</span> <span class=o>=</span> <span class=kr>async</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=kr>await</span> <span class=nx>init</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=k>try</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nx>only_return_error_when_result</span><span class=p>(</span><span class=mi>1</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>            <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;1 is ok&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span> <span class=k>catch</span><span class=p>(</span><span class=nx>error</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;An error is reported when the input parameter is 1: &#39;</span><span class=p>,</span> <span class=nx>error</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=k>try</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nx>only_return_error_when_result</span><span class=p>(</span><span class=mi>100</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>            <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;100 is ok&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span> <span class=k>catch</span><span class=p>(</span><span class=nx>error</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;An error is reported when the input parameter is 100: &#39;</span><span class=p>,</span> <span class=nx>error</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nx>run</span><span class=p>();</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><p>Here it&rsquo;s called twice, the first time should be an error, the second time should be correct, and both use <code>catch</code> to catch errors.</p><p>So, in the browser&rsquo;s console, you can see the output:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>An error is reported when the input parameter is 1:  Error: count &lt; 10
+</span></span><span class=line><span class=cl>100 is ok
+</span></span></code></pre></td></tr></table></div></div><h4 id=42-using-result-to-return-normal-values-and-errors>4.2 Using Result to Return Normal Values and Errors</h4><p>So, what if you want to return both normal values and errors? Rust returning a <code>Result</code> is no problem, but how does JS parse it?</p><p>Let&rsquo;s go straight to the Rust code:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=cp>#[wasm_bindgen]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>pub</span><span class=w> </span><span class=k>fn</span> <span class=nf>return_all_when_result</span><span class=p>(</span><span class=n>count</span>: <span class=kt>i32</span><span class=p>)</span><span class=w> </span>-&gt; <span class=nb>Result</span><span class=o>&lt;</span><span class=kt>i32</span><span class=p>,</span><span class=w> </span><span class=n>JsError</span><span class=o>&gt;</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>if</span><span class=w> </span><span class=n>count</span><span class=w> </span><span class=o>&gt;</span><span class=w> </span><span class=mi>10</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nb>Ok</span><span class=p>(</span><span class=n>count</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=mi>10</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w> </span><span class=k>else</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nb>Err</span><span class=p>(</span><span class=n>JsError</span>::<span class=n>new</span><span class=p>(</span><span class=s>&#34;count &lt; 10&#34;</span><span class=p>))</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><p>This function, after getting the parameter, if it meets the condition, adds 10 and returns, otherwise it reports an error.</p><p>Let&rsquo;s see how to call it in HTML:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>script</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;module&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=kr>import</span> <span class=nx>init</span><span class=p>,</span> <span class=p>{</span> <span class=nx>return_all_when_result</span> <span class=p>}</span> <span class=nx>from</span> <span class=s1>&#39;./pkg/hello_wasm.js&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=nx>run</span> <span class=o>=</span> <span class=kr>async</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=kr>await</span> <span class=nx>init</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=k>try</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=kr>const</span> <span class=nx>res</span> <span class=o>=</span> <span class=nx>return_all_when_result</span><span class=p>(</span><span class=mi>1</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>            <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=sb>`get </span><span class=si>${</span><span class=nx>res</span><span class=si>}</span><span class=sb>`</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span> <span class=k>catch</span><span class=p>(</span><span class=nx>error</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;An error is reported when the input parameter is 1: &#39;</span><span class=p>,</span> <span class=nx>error</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=k>try</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=kr>const</span> <span class=nx>res</span> <span class=o>=</span> <span class=nx>return_all_when_result</span><span class=p>(</span><span class=mi>100</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>            <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=sb>`get </span><span class=si>${</span><span class=nx>res</span><span class=si>}</span><span class=sb>`</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span> <span class=k>catch</span><span class=p>(</span><span class=nx>error</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;An error is reported when the input parameter is 100: &#39;</span><span class=p>,</span> <span class=nx>error</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nx>run</span><span class=p>();</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><p>Yes, that&rsquo;s right, just get it normally&mldr;.. /facepalm</p><p>The call here is still, the first one is wrong, the second one correctly returns a value, and both use <code>catch</code> to catch errors.</p><p>Finally, in the browser&rsquo;s console, you can see:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>An error is reported when the input parameter is 1:  Error: count &lt; 10
+</span></span><span class=line><span class=cl>get 110
+</span></span></code></pre></td></tr></table></div></div><h3 id=5-directly-importing-js-types>5. Directly Importing JS Types</h3><p>If you want to be more direct, you can directly import JS types! This mainly uses the <code>js-sys</code> dependency, you can see many JS types and functions on the <a class=link href=https://docs.rs/js-sys/latest/js_sys/ target=_blank rel=noopener>official documentation</a>, just import them directly to use. Of course, in certain scenarios, directly imported types need to be manually converted.</p><h4 id=51-configuring-dependencies>5.1 Configuring Dependencies</h4><p>Add the <code>js-sys</code> dependency in <code>Cargo.toml</code>:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-toml data-lang=toml><span class=line><span class=cl><span class=p>[</span><span class=nx>dependencies</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=nx>wasm-bindgen</span> <span class=p>=</span> <span class=s2>&#34;0.2.87&#34;</span>
+</span></span><span class=line><span class=cl><span class=nx>web-sys</span> <span class=p>=</span> <span class=p>{</span> <span class=nx>version</span> <span class=p>=</span> <span class=s2>&#34;0.3.64&#34;</span><span class=p>,</span> <span class=nx>features</span> <span class=p>=</span> <span class=p>[</span><span class=s2>&#34;Window&#34;</span><span class=p>,</span> <span class=s2>&#34;Document&#34;</span><span class=p>,</span> <span class=s2>&#34;Element&#34;</span><span class=p>,</span> <span class=s2>&#34;console&#34;</span><span class=p>]</span> <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=nx>js-sys</span> <span class=p>=</span> <span class=s2>&#34;0.3.61&#34;</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=52-uint8array>5.2 Uint8Array</h4><p>First, take <code>Uint8Array</code> as an example, import the type at the top of <code>lib.rs</code>:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=k>use</span><span class=w> </span><span class=n>js_sys</span>::<span class=n>Uint8Array</span><span class=p>;</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><p>Then create a function with parameters and return both of type <code>Uint8Array</code>:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=cp>#[wasm_bindgen]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>pub</span><span class=w> </span><span class=k>fn</span> <span class=nf>print_uint8_array</span><span class=p>(</span><span class=n>js_arr</span>: <span class=nc>Uint8Array</span><span class=p>)</span><span class=w> </span>-&gt; <span class=nc>Uint8Array</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>// new Uint8Array
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=k>mut</span><span class=w> </span><span class=n>arr</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>Uint8Array</span>::<span class=n>new_with_length</span><span class=p>(</span><span class=mi>3</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>// Uint8Array -&gt; vec
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>    </span><span class=k>for</span><span class=w> </span><span class=p>(</span><span class=n>index</span><span class=p>,</span><span class=w> </span><span class=n>item</span><span class=p>)</span><span class=w> </span><span class=k>in</span><span class=w> </span><span class=n>js_arr</span><span class=p>.</span><span class=n>to_vec</span><span class=p>().</span><span class=n>iter</span><span class=p>().</span><span class=n>enumerate</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>console_log</span><span class=p>(</span><span class=fm>format!</span><span class=p>(</span><span class=s>&#34;</span><span class=si>{}</span><span class=s> - the item in js_arr: </span><span class=si>{}</span><span class=s>&#34;</span><span class=p>,</span><span class=w> </span><span class=n>index</span><span class=p>,</span><span class=w> </span><span class=n>item</span><span class=p>));</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>// Avoid type conversion
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>    </span><span class=c1>// Use the method of the type itself
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>    </span><span class=k>for</span><span class=w> </span><span class=n>index</span><span class=w> </span><span class=k>in</span><span class=w> </span><span class=mi>0</span><span class=o>..</span><span class=n>js_arr</span><span class=p>.</span><span class=n>length</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>console_log</span><span class=p>(</span><span class=fm>format!</span><span class=p>(</span><span class=s>&#34;</span><span class=si>{}</span><span class=s> - the item in js_arr: </span><span class=si>{}</span><span class=s>&#34;</span><span class=p>,</span><span class=w> </span><span class=n>index</span><span class=p>,</span><span class=w> </span><span class=n>js_arr</span><span class=p>.</span><span class=n>get_index</span><span class=p>(</span><span class=n>index</span><span class=p>)));</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>// vec -&gt; Uint8Array
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>vec</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=fm>vec!</span><span class=p>[</span><span class=mi>1</span><span class=p>,</span><span class=w> </span><span class=mi>2</span><span class=p>,</span><span class=w> </span><span class=mi>3</span><span class=p>];</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>arr2</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>Uint8Array</span>::<span class=n>from</span><span class=p>(</span><span class=n>vec</span><span class=p>.</span><span class=n>as_slice</span><span class=p>());</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>arr</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>arr2</span><span class=p>.</span><span class=n>clone</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>// Use the method of the type itself
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>    </span><span class=n>arr</span><span class=p>.</span><span class=n>set_index</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span><span class=w> </span><span class=mi>100</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>arr</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><blockquote><p>Ignore the meaningless logic in this function and the warning of the <code>arr</code> variable, it&rsquo;s just for demonstration purposes.</p></blockquote><p>You can see in the code that the directly imported <code>Uint8Array</code> has its own methods. In certain scenarios, type conversion is needed, but it&rsquo;s best to avoid type conversion and directly use its own methods.</p><p>We can briefly summarize here that it&rsquo;s best to use directly imported JS types entirely within certain scenarios, or use Rust types to replace JS types entirely. When both exist, manually converting types is a terrible thing.</p><h4 id=53-date>5.3 Date</h4><p>The <code>Date</code> type wasn&rsquo;t mentioned in the above sections. Here we can directly import and use the JS <code>Date</code> type.</p><p>First, import the type:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=k>use</span><span class=w> </span><span class=n>js_sys</span>::<span class=n>Date</span><span class=p>;</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><p>Then, create a function that returns a timestamp:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=cp>#[wasm_bindgen]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>pub</span><span class=w> </span><span class=k>fn</span> <span class=nf>return_time</span><span class=p>()</span><span class=w> </span>-&gt; <span class=kt>f64</span> <span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>date</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>Date</span>::<span class=n>new_0</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>date</span><span class=p>.</span><span class=n>get_time</span><span class=p>()</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><p>Then, call it in HTML:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>script</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;module&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=kr>import</span> <span class=nx>init</span><span class=p>,</span> <span class=p>{</span> <span class=nx>return_time</span> <span class=p>}</span> <span class=nx>from</span> <span class=s1>&#39;./pkg/hello_wasm.js&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=nx>run</span> <span class=o>=</span> <span class=kr>async</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=kr>await</span> <span class=nx>init</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;current time: &#39;</span><span class=p>,</span> <span class=nx>return_time</span><span class=p>());</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nx>run</span><span class=p>();</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><p>Finally, in the browser&rsquo;s console, you can see:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>current time:  1686979932833
+</span></span></code></pre></td></tr></table></div></div><h2 id=conclusion>Conclusion</h2><p>In this article, we mainly discussed how to use Rust to implement DOM operations. Readers can find suitable methods to implement their own scenarios based on the methods. Secondly, we also discussed the type conversion between Rust and JS, from the mapping of basic types of each, to Rust&rsquo;s unique <code>Result</code>, to directly importing JS types. Of course, it should be noted that directly importing JS types and mapping JS types to Rust&rsquo;s basic types should not be mixed as much as possible. Mixing will lead to the need for manual type conversion, causing performance loss.</p><p>At this point, we&rsquo;ve taken another step towards creating cool stuff with Rust and WebAssembly~😼</p></section><footer class=article-footer><section class=article-tags><a href=/tags/webassembly/>WebAssembly</a>
+<a href=/tags/rust/>Rust</a></section><section class=article-copyright><svg class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>Licensed under CC BY-NC-SA 4.0</span></section><section class=article-lastmod><svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<span>Last updated on Jun 14, 2023 00:00 UTC</span></section></footer></article><aside class=related-content--wrapper><h2 class=section-title>Related content</h2><div class=related-content><div class="flex article-list--tile"><article class=has-image><a href=/posts/getting-fancy-with-rust-and-webassembly-part-4-smaller-wasm-file-size/><div class=article-image><img src=/posts/getting-fancy-with-rust-and-webassembly-part-4-smaller-wasm-file-size/cover.2e8b11dfa976d41e74c2f13eba5ef63c_hu11424931117036314226.jpg width=250 height=150 loading=lazy alt="Featured image of post Getting Fancy with Rust and WebAssembly (Part 4) - Smaller wasm file size" data-hash="md5-LosR36l21B50wvE+ul72PA=="></div><div class=article-details><h2 class=article-title>Getting Fancy with Rust and WebAssembly (Part 4) - Smaller wasm file size</h2></div></a></article><article class=has-image><a href=/posts/getting-fancy-with-rust-and-webassembly-part-3-rust-and-js-interaction/><div class=article-image><img src=/posts/getting-fancy-with-rust-and-webassembly-part-3-rust-and-js-interaction/cover.2e8b11dfa976d41e74c2f13eba5ef63c_hu11424931117036314226.jpg width=250 height=150 loading=lazy alt="Featured image of post Getting Fancy with Rust and WebAssembly (Part 3) - Rust and JS interaction" data-hash="md5-LosR36l21B50wvE+ul72PA=="></div><div class=article-details><h2 class=article-title>Getting Fancy with Rust and WebAssembly (Part 3) - Rust and JS interaction</h2></div></a></article><article class=has-image><a href=/posts/getting-fancy-with-rust-and-webassembly-part-1-quick-start/><div class=article-image><img src=/posts/getting-fancy-with-rust-and-webassembly-part-1-quick-start/cover.2e8b11dfa976d41e74c2f13eba5ef63c_hu11424931117036314226.jpg width=250 height=150 loading=lazy alt="Featured image of post Getting Fancy with Rust and WebAssembly (Part 1) - Quick Start" data-hash="md5-LosR36l21B50wvE+ul72PA=="></div><div class=article-details><h2 class=article-title>Getting Fancy with Rust and WebAssembly (Part 1) - Quick Start</h2></div></a></article><article><a href=/posts/how-to-add-custom-fonts-to-swiftui-project-in-xcode/><div class=article-details><h2 class=article-title>How to add custom fonts to SwiftUI project in Xcode</h2></div></a></article><article><a href=/posts/how-to-make-empty-space-clickable-in-swiftui/><div class=article-details><h2 class=article-title>How to make empty space clickable in SwiftUI</h2></div></a></article></div></div></aside><footer class=site-footer><section class=copyright>&copy;
+2020 -
+2024 Hunter Ji</section><section class=powerby>Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a><br>Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.29.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a></section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous></main></div><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script><script type=text/javascript src=/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js defer></script><script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script></body></html>

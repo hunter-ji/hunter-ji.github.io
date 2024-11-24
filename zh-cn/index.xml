@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>小橙</title><link>https://hunterji.com/zh-cn/</link><description>Recent content on 小橙</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 24 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://hunterji.com/zh-cn/index.xml" rel="self" type="application/rss+xml"/><item><title>关于我</title><link>https://hunterji.com/zh-cn/%E5%85%B3%E4%BA%8E%E6%88%91/</link><pubDate>Sun, 24 Nov 2024 00:00:00 +0000</pubDate><guid>https://hunterji.com/zh-cn/%E5%85%B3%E4%BA%8E%E6%88%91/</guid><description>&lt;p>👋 嗨，我是小橙，一名经验丰富的全栈工程师和独立开发者，同时也在探索设计领域。我热衷于创造融合技术卓越性和精心设计原则的用户友好型应用，致力于用创新解决方案帮助他人。目前，我正在学习 UI/UX 设计，持续开发实用的解决方案。&lt;/p>
-&lt;p>我经常分享我的设计作品、技术和生活感悟，因为我相信知识分享和持续学习的力量。我热爱技术与设计的交汇点，也很乐意与志同道合的朋友建立联系。&lt;/p></description></item><item><title>程序员如何快速验证业务需求?</title><link>https://hunterji.com/zh-cn/posts/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E9%AA%8C%E8%AF%81%E4%B8%9A%E5%8A%A1%E9%9C%80%E6%B1%82/</link><pubDate>Tue, 05 Dec 2023 15:56:29 +0000</pubDate><guid>https://hunterji.com/zh-cn/posts/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E9%AA%8C%E8%AF%81%E4%B8%9A%E5%8A%A1%E9%9C%80%E6%B1%82/</guid><description>&lt;img src="https://hunterji.com/zh-cn/posts/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E9%AA%8C%E8%AF%81%E4%B8%9A%E5%8A%A1%E9%9C%80%E6%B1%82/cover.png" alt="Featured image of post 程序员如何快速验证业务需求?" />&lt;h2 id="前言">前言
+&lt;p>我经常分享我的设计作品、技术和生活感悟，因为我相信知识分享和持续学习的力量。我热爱技术与设计的交汇点，也很乐意与志同道合的朋友建立联系。&lt;/p></description></item><item><title>程序员如何快速验证业务需求?</title><link>https://hunterji.com/zh-cn/post/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E9%AA%8C%E8%AF%81%E4%B8%9A%E5%8A%A1%E9%9C%80%E6%B1%82/</link><pubDate>Tue, 05 Dec 2023 15:56:29 +0000</pubDate><guid>https://hunterji.com/zh-cn/post/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E9%AA%8C%E8%AF%81%E4%B8%9A%E5%8A%A1%E9%9C%80%E6%B1%82/</guid><description>&lt;img src="https://hunterji.com/zh-cn/post/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E9%AA%8C%E8%AF%81%E4%B8%9A%E5%8A%A1%E9%9C%80%E6%B1%82/cover.png" alt="Featured image of post 程序员如何快速验证业务需求?" />&lt;h2 id="前言">前言
 &lt;/h2>&lt;p>设想一个场景：&lt;/p>
 &lt;p>你作为一个程序员，听着攒劲的小曲，写着优雅的代码，加班加点终于写完了迭代中分配的模块需求。然后你跟别的同事一联调，却发现各种问题。&lt;/p>
 &lt;p>你跟同事A说：“你得在这种情况下给我数据A。“&lt;/p>
@@ -47,7 +47,7 @@
 &lt;p>如果你要问，什么是“最基础的完整功能”，那么可以这么说，那么举个例子：前端不要任何样式，直接能够满足比如表单功能即可，后端不用任何校验，能够处理和传递数据即可。&lt;/p>
 &lt;h2 id="总结">总结
 &lt;/h2>&lt;p>为了解决文章开头的问题，需要使用曳光弹式开发，先开发一个骨架，确认满足需求后，即可继续丰富骨架，完成产品。&lt;/p>
-&lt;p>作为团队的一员，团队的每一个角色都很重要，程序员跟产品也是需要紧密协作，互帮互助，才能使得产品更好，也使得业绩更好。&lt;/p></description></item><item><title>使用Rust和WebAssembly整花活儿(四)——更小更小的wasm文件体积</title><link>https://hunterji.com/zh-cn/posts/%E4%BD%BF%E7%94%A8rust%E5%92%8Cwebassembly%E6%95%B4%E8%8A%B1%E6%B4%BB%E5%84%BF%E5%9B%9B%E6%9B%B4%E5%B0%8F%E6%9B%B4%E5%B0%8F%E7%9A%84wasm%E6%96%87%E4%BB%B6%E4%BD%93%E7%A7%AF/</link><pubDate>Thu, 26 Oct 2023 23:51:13 +0000</pubDate><guid>https://hunterji.com/zh-cn/posts/%E4%BD%BF%E7%94%A8rust%E5%92%8Cwebassembly%E6%95%B4%E8%8A%B1%E6%B4%BB%E5%84%BF%E5%9B%9B%E6%9B%B4%E5%B0%8F%E6%9B%B4%E5%B0%8F%E7%9A%84wasm%E6%96%87%E4%BB%B6%E4%BD%93%E7%A7%AF/</guid><description>&lt;img src="https://hunterji.com/zh-cn/posts/%E4%BD%BF%E7%94%A8rust%E5%92%8Cwebassembly%E6%95%B4%E8%8A%B1%E6%B4%BB%E5%84%BF%E5%9B%9B%E6%9B%B4%E5%B0%8F%E6%9B%B4%E5%B0%8F%E7%9A%84wasm%E6%96%87%E4%BB%B6%E4%BD%93%E7%A7%AF/cover.jpg" alt="Featured image of post 使用Rust和WebAssembly整花活儿(四)——更小更小的wasm文件体积" />&lt;h2 id="前言">前言
+&lt;p>作为团队的一员，团队的每一个角色都很重要，程序员跟产品也是需要紧密协作，互帮互助，才能使得产品更好，也使得业绩更好。&lt;/p></description></item><item><title>使用Rust和WebAssembly整花活儿(四)——更小更小的wasm文件体积</title><link>https://hunterji.com/zh-cn/post/%E4%BD%BF%E7%94%A8rust%E5%92%8Cwebassembly%E6%95%B4%E8%8A%B1%E6%B4%BB%E5%84%BF%E5%9B%9B%E6%9B%B4%E5%B0%8F%E6%9B%B4%E5%B0%8F%E7%9A%84wasm%E6%96%87%E4%BB%B6%E4%BD%93%E7%A7%AF/</link><pubDate>Thu, 26 Oct 2023 23:51:13 +0000</pubDate><guid>https://hunterji.com/zh-cn/post/%E4%BD%BF%E7%94%A8rust%E5%92%8Cwebassembly%E6%95%B4%E8%8A%B1%E6%B4%BB%E5%84%BF%E5%9B%9B%E6%9B%B4%E5%B0%8F%E6%9B%B4%E5%B0%8F%E7%9A%84wasm%E6%96%87%E4%BB%B6%E4%BD%93%E7%A7%AF/</guid><description>&lt;img src="https://hunterji.com/img/cover.jpg" alt="Featured image of post 使用Rust和WebAssembly整花活儿(四)——更小更小的wasm文件体积" />&lt;h2 id="前言">前言
 &lt;/h2>&lt;p>在上一篇文章&lt;a class="link" href="https://blog.hunterji.com/p/%E4%BD%BF%E7%94%A8rust%E5%92%8Cwebassembly%E6%95%B4%E8%8A%B1%E6%B4%BB%E5%84%BF%E4%B8%89rust%E4%B8%8Ejs%E4%BA%A4%E4%BA%92/" target="_blank" rel="noopener"
 >《使用Rust和WebAssembly整花活儿(三)——Rust与JS交互》&lt;/a>中，讲述了Rust与JS的交互，包括Rust与JS的函数相互调用，比较炸裂的功能就是使用JS调用Rust的struct，JS本身连struct都没有，居然可以调用Rust的struct，这对于Rust开发者的开发体验而言，是真的很棒！&lt;/p>
 &lt;p>基于前面的系列文章，已经足以使用Rust开发一个完整的功能了。&lt;/p>
@@ -323,7 +323,7 @@
 &lt;h2 id="总结">总结
 &lt;/h2>&lt;p>本片文章中，从代码层面、网络层面、物理层面共三个层面介绍了对wasm文件的体积优化方案，其中共有四个方案。&lt;/p>
 &lt;p>最后，当前（本系列文章积累的）该案例叠加了所有buff之后，能够减少77%的体积，真的感觉挺棒的了，哈哈。&lt;/p>
-&lt;p>希望能够对各位有所帮助。&lt;/p></description></item><item><title>使用Rust和WebAssembly整花活儿(三)——Rust与JS交互</title><link>https://hunterji.com/zh-cn/posts/%E4%BD%BF%E7%94%A8rust%E5%92%8Cwebassembly%E6%95%B4%E8%8A%B1%E6%B4%BB%E5%84%BF%E4%B8%89rust%E4%B8%8Ejs%E4%BA%A4%E4%BA%92/</link><pubDate>Tue, 27 Jun 2023 00:11:12 +0000</pubDate><guid>https://hunterji.com/zh-cn/posts/%E4%BD%BF%E7%94%A8rust%E5%92%8Cwebassembly%E6%95%B4%E8%8A%B1%E6%B4%BB%E5%84%BF%E4%B8%89rust%E4%B8%8Ejs%E4%BA%A4%E4%BA%92/</guid><description>&lt;img src="https://hunterji.com/zh-cn/posts/%E4%BD%BF%E7%94%A8rust%E5%92%8Cwebassembly%E6%95%B4%E8%8A%B1%E6%B4%BB%E5%84%BF%E4%B8%89rust%E4%B8%8Ejs%E4%BA%A4%E4%BA%92/cover.jpg" alt="Featured image of post 使用Rust和WebAssembly整花活儿(三)——Rust与JS交互" />&lt;h2 id="前言">前言
+&lt;p>希望能够对各位有所帮助。&lt;/p></description></item><item><title>使用Rust和WebAssembly整花活儿(三)——Rust与JS交互</title><link>https://hunterji.com/zh-cn/post/%E4%BD%BF%E7%94%A8rust%E5%92%8Cwebassembly%E6%95%B4%E8%8A%B1%E6%B4%BB%E5%84%BF%E4%B8%89rust%E4%B8%8Ejs%E4%BA%A4%E4%BA%92/</link><pubDate>Tue, 27 Jun 2023 00:11:12 +0000</pubDate><guid>https://hunterji.com/zh-cn/post/%E4%BD%BF%E7%94%A8rust%E5%92%8Cwebassembly%E6%95%B4%E8%8A%B1%E6%B4%BB%E5%84%BF%E4%B8%89rust%E4%B8%8Ejs%E4%BA%A4%E4%BA%92/</guid><description>&lt;img src="https://hunterji.com/img/cover.jpg" alt="Featured image of post 使用Rust和WebAssembly整花活儿(三)——Rust与JS交互" />&lt;h2 id="前言">前言
 &lt;/h2>&lt;p>在上一篇文章&lt;a class="link" href="https://github.com/Kuari/Blog/issues/73" target="_blank" rel="noopener"
 >《使用Rust和WebAssembly整花活儿(二)——DOM和类型转换》&lt;/a>中，描述了使用Rust操作DOM，并实现Rust与JS类型转换的多种方法。&lt;/p>
 &lt;p>在开发 Web 应用程序时，使用 Rust 编写的 Wasm 模块可以提供更高的性能和更好的安全性。但是，为了与现有的 JavaScript 代码集成，必须实现 Rust 与 JS 之间的交互。Rust 与 JS 交互的主要目的是将两种语言的优势结合起来，以实现更好的 Web 应用程序。&lt;/p>
@@ -777,7 +777,7 @@
 &lt;/h2>&lt;p>本篇文章中，主要讲述了Rust与JS的交互，体现在Rust与JS的相互调用，这是建立在&lt;a class="link" href="https://github.com/Kuari/Blog/issues/73" target="_blank" rel="noopener"
 >上一篇文章&lt;/a>中类型转换的基础上的。&lt;/p>
 &lt;p>Rust与JS的函数相互调用的学习成本还是较大的，而且对比Go写wasm，Rust的颗粒度是非常细的，几乎可以说是随心所欲了。&lt;/p>
-&lt;p>比较炸裂的就是Rust的struct导出给JS用，这对于Rust与JS的交互而言，还是非常棒的体验。&lt;/p></description></item><item><title>使用Rust和WebAssembly整花活儿(二)——DOM和类型转换</title><link>https://hunterji.com/zh-cn/posts/%E4%BD%BF%E7%94%A8rust%E5%92%8Cwebassembly%E6%95%B4%E8%8A%B1%E6%B4%BB%E5%84%BF%E4%BA%8Cdom%E5%92%8C%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</link><pubDate>Sun, 18 Jun 2023 18:18:31 +0000</pubDate><guid>https://hunterji.com/zh-cn/posts/%E4%BD%BF%E7%94%A8rust%E5%92%8Cwebassembly%E6%95%B4%E8%8A%B1%E6%B4%BB%E5%84%BF%E4%BA%8Cdom%E5%92%8C%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</guid><description>&lt;img src="https://hunterji.com/zh-cn/posts/%E4%BD%BF%E7%94%A8rust%E5%92%8Cwebassembly%E6%95%B4%E8%8A%B1%E6%B4%BB%E5%84%BF%E4%BA%8Cdom%E5%92%8C%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/cover.jpg" alt="Featured image of post 使用Rust和WebAssembly整花活儿(二)——DOM和类型转换" />&lt;h2 id="前言">前言
+&lt;p>比较炸裂的就是Rust的struct导出给JS用，这对于Rust与JS的交互而言，还是非常棒的体验。&lt;/p></description></item><item><title>使用Rust和WebAssembly整花活儿(二)——DOM和类型转换</title><link>https://hunterji.com/zh-cn/post/%E4%BD%BF%E7%94%A8rust%E5%92%8Cwebassembly%E6%95%B4%E8%8A%B1%E6%B4%BB%E5%84%BF%E4%BA%8Cdom%E5%92%8C%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</link><pubDate>Sun, 18 Jun 2023 18:18:31 +0000</pubDate><guid>https://hunterji.com/zh-cn/post/%E4%BD%BF%E7%94%A8rust%E5%92%8Cwebassembly%E6%95%B4%E8%8A%B1%E6%B4%BB%E5%84%BF%E4%BA%8Cdom%E5%92%8C%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</guid><description>&lt;img src="https://hunterji.com/img/cover.jpg" alt="Featured image of post 使用Rust和WebAssembly整花活儿(二)——DOM和类型转换" />&lt;h2 id="前言">前言
 &lt;/h2>&lt;p>在上一篇文章&lt;a class="link" href="https://github.com/Kuari/Blog/issues/72" target="_blank" rel="noopener"
 >《使用Rust和WebAssembly整花活儿(一)——快速开始》&lt;/a>中，描述了如何创建项目和快速生成wasm并在前端中使用，迈出了整花活儿的第一步。&lt;/p>
 &lt;p>在开发 Web 应用程序时，使用 Rust 编写的 Wasm 模块可以提供更高的性能和更好的安全性。但是，为了与现有的 JavaScript 代码集成，必须实现 Rust 与 JS 之间的交互。Rust 与 JS 交互的主要目的是将两种语言的优势结合起来，以实现更好的 Web 应用程序。&lt;/p>
@@ -1013,7 +1013,7 @@
 &lt;td>[T] 例如：Uint8Array&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Vec&lt;T>&lt;/td>
+&lt;td>Vec&amp;lt;T&amp;gt;&lt;/td>
 &lt;td>Array&lt;/td>
 &lt;/tr>
 &lt;/tbody>
@@ -1639,7 +1639,7 @@
 &lt;/div>
 &lt;/div>&lt;h2 id="总结">总结
 &lt;/h2>&lt;p>本文中，主要讲述了如何使用Rust来实现DOM操作，读者可以根据方法自己去找到合适的方法，来实现自己的场景。其次，还讲述了Rust与JS的类型转换，从基础的各自类型的映射，到Rust独有的&lt;code>Result&lt;/code>，到直接引入JS类型。当然这里需要注意的是，直接引入JS类型和Rust的基础类型映射JS类型这两种方法尽量不要混用，混用会导致需要手动类型转换，造成性能损耗。&lt;/p>
-&lt;p>至此，又向Rust和WebAssembly整花活儿迈进了一步~😼&lt;/p></description></item><item><title>使用Rust和WebAssembly整花活儿(一)——快速开始</title><link>https://hunterji.com/zh-cn/posts/%E4%BD%BF%E7%94%A8rust%E5%92%8Cwebassembly%E6%95%B4%E8%8A%B1%E6%B4%BB%E5%84%BF%E4%B8%80%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/</link><pubDate>Wed, 14 Jun 2023 17:32:28 +0000</pubDate><guid>https://hunterji.com/zh-cn/posts/%E4%BD%BF%E7%94%A8rust%E5%92%8Cwebassembly%E6%95%B4%E8%8A%B1%E6%B4%BB%E5%84%BF%E4%B8%80%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/</guid><description>&lt;img src="https://hunterji.com/zh-cn/posts/%E4%BD%BF%E7%94%A8rust%E5%92%8Cwebassembly%E6%95%B4%E8%8A%B1%E6%B4%BB%E5%84%BF%E4%B8%80%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/cover.jpg" alt="Featured image of post 使用Rust和WebAssembly整花活儿(一)——快速开始" />&lt;h2 id="前言">前言
+&lt;p>至此，又向Rust和WebAssembly整花活儿迈进了一步~😼&lt;/p></description></item><item><title>使用Rust和WebAssembly整花活儿(一)——快速开始</title><link>https://hunterji.com/zh-cn/post/%E4%BD%BF%E7%94%A8rust%E5%92%8Cwebassembly%E6%95%B4%E8%8A%B1%E6%B4%BB%E5%84%BF%E4%B8%80%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/</link><pubDate>Wed, 14 Jun 2023 17:32:28 +0000</pubDate><guid>https://hunterji.com/zh-cn/post/%E4%BD%BF%E7%94%A8rust%E5%92%8Cwebassembly%E6%95%B4%E8%8A%B1%E6%B4%BB%E5%84%BF%E4%B8%80%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/</guid><description>&lt;img src="https://hunterji.com/img/cover.jpg" alt="Featured image of post 使用Rust和WebAssembly整花活儿(一)——快速开始" />&lt;h2 id="前言">前言
 &lt;/h2>&lt;p>&lt;a class="link" href="https://developer.mozilla.org/zh-CN/docs/WebAssembly" target="_blank" rel="noopener"
 >WebAssembly&lt;/a> 是一种新的编码方式，可以在现代的网络浏览器中运行 － 它是一种低级的类汇编语言，具有紧凑的二进制格式，可以接近原生的性能运行，并为诸如 C / C ++等语言提供一个编译目标，以便它们可以在 Web 上运行。它也被设计为可以与 JavaScript 共存，允许两者一起工作。&lt;/p>
 &lt;p>之前写过一篇文章，是关于如何使用golang来开发WebAssembly的——&lt;a class="link" href="https://blog.hunterji.com/p/webassembly--%e6%9c%aa%e6%9d%a5%e5%89%8d%e7%ab%af%e5%bc%80%e5%8f%91%e7%9a%84%e5%bf%85%e5%a4%87%e6%8a%80%e8%83%bd" target="_blank" rel="noopener"
@@ -1941,7 +1941,7 @@ alt="rust_wasm"
 &lt;/div>&lt;p>是的，没错，当前是可行的，但是当引入了一些别的比如dom之类的，就坏起来了……&lt;/p>
 &lt;h3 id="更新的wasm引入方式">更新的wasm引入方式
 &lt;/h3>&lt;p>上一问题中，且不说是否可以直接引入wasm文件，这里仅说一下，&lt;code>instantiateStreaming&lt;/code>这个方法。这是一个更新的方法，无需转成&lt;code>arrayBuffer&lt;/code>，这也是摸索Rust整活儿时候发现的。如果在别的语言引入wasm，请使用这个&lt;a class="link" href="https://developer.mozilla.org/en-US/docs/WebAssembly/JavaScript_interface/instantiateStreaming" target="_blank" rel="noopener"
->更新的方法&lt;/a>吧。&lt;/p></description></item><item><title>WebAssembly -- 未来前端开发的必备技能</title><link>https://hunterji.com/zh-cn/posts/webassembly--%E6%9C%AA%E6%9D%A5%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%9A%84%E5%BF%85%E5%A4%87%E6%8A%80%E8%83%BD/</link><pubDate>Thu, 09 Feb 2023 13:15:34 +0000</pubDate><guid>https://hunterji.com/zh-cn/posts/webassembly--%E6%9C%AA%E6%9D%A5%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%9A%84%E5%BF%85%E5%A4%87%E6%8A%80%E8%83%BD/</guid><description>&lt;img src="https://hunterji.com/zh-cn/posts/webassembly--%E6%9C%AA%E6%9D%A5%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%9A%84%E5%BF%85%E5%A4%87%E6%8A%80%E8%83%BD/cover.jpg" alt="Featured image of post WebAssembly -- 未来前端开发的必备技能" />&lt;h2 id="前言">前言
+>更新的方法&lt;/a>吧。&lt;/p></description></item><item><title>如何使用Go构建WebAssembly</title><link>https://hunterji.com/zh-cn/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8go%E6%9E%84%E5%BB%BAwebassembly/</link><pubDate>Thu, 09 Feb 2023 13:15:34 +0000</pubDate><guid>https://hunterji.com/zh-cn/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8go%E6%9E%84%E5%BB%BAwebassembly/</guid><description>&lt;img src="https://hunterji.com/zh-cn/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8go%E6%9E%84%E5%BB%BAwebassembly/cover.jpg" alt="Featured image of post 如何使用Go构建WebAssembly" />&lt;h2 id="前言">前言
 &lt;/h2>&lt;p>&lt;a class="link" href="https://developer.mozilla.org/zh-CN/docs/WebAssembly" target="_blank" rel="noopener"
 >WebAssembly&lt;/a> 是一种新的编码方式，可以在现代的网络浏览器中运行 － 它是一种低级的类汇编语言，具有紧凑的二进制格式，可以接近原生的性能运行，并为诸如 C / C ++等语言提供一个编译目标，以便它们可以在 Web 上运行。它也被设计为可以与 JavaScript 共存，允许两者一起工作。&lt;/p>
 &lt;h2 id="快速上手">快速上手
@@ -2776,4 +2776,120 @@ alt="go_wasm_canvas"
 >Go WebAssembly (Wasm) 简明教程&lt;/a>&lt;/li>
 &lt;li>&lt;a class="link" href="https://withblue.ink/2020/10/03/go-webassembly-http-requests-and-promises.html" target="_blank" rel="noopener"
 >Go, WebAssembly, HTTP requests and Promises&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>分类</title><link>https://hunterji.com/zh-cn/archives/</link><pubDate>Sun, 06 Mar 2022 00:00:00 +0000</pubDate><guid>https://hunterji.com/zh-cn/archives/</guid><description/></item><item><title>设计作品</title><link>https://hunterji.com/zh-cn/%E8%AE%BE%E8%AE%A1%E4%BD%9C%E5%93%81/</link><pubDate>Sun, 06 Mar 2022 00:00:00 +0000</pubDate><guid>https://hunterji.com/zh-cn/%E8%AE%BE%E8%AE%A1%E4%BD%9C%E5%93%81/</guid><description/></item><item><title>Search</title><link>https://hunterji.com/zh-cn/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://hunterji.com/zh-cn/search/</guid><description/></item><item><title>我的产品</title><link>https://hunterji.com/zh-cn/products/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://hunterji.com/zh-cn/products/</guid><description/></item></channel></rss>
+&lt;/ul></description></item><item><title>文章</title><link>https://hunterji.com/zh-cn/archives/</link><pubDate>Sun, 06 Mar 2022 00:00:00 +0000</pubDate><guid>https://hunterji.com/zh-cn/archives/</guid><description/></item><item><title>Golang实现农历转换阳历</title><link>https://hunterji.com/zh-cn/post/golang%E5%AE%9E%E7%8E%B0%E5%86%9C%E5%8E%86%E8%BD%AC%E6%8D%A2%E9%98%B3%E5%8E%86/</link><pubDate>Tue, 31 Aug 2021 09:08:57 +0000</pubDate><guid>https://hunterji.com/zh-cn/post/golang%E5%AE%9E%E7%8E%B0%E5%86%9C%E5%8E%86%E8%BD%AC%E6%8D%A2%E9%98%B3%E5%8E%86/</guid><description>&lt;img src="https://hunterji.com/zh-cn/post/golang%E5%AE%9E%E7%8E%B0%E5%86%9C%E5%8E%86%E8%BD%AC%E6%8D%A2%E9%98%B3%E5%8E%86/normal.jpg" alt="Featured image of post Golang实现农历转换阳历" />&lt;h2 id="前言">前言
+&lt;/h2>&lt;p>因为项目需求，需要去检测用户的农历生日。虽然后来找到了合适的库，但是首先先解释下&lt;code>农历&lt;/code>的定义，也是去了解才知道，原来农历不是阴历。&lt;/p>
+&lt;p>农历属于阴阳合历，其年份分为平年和闰年。平年为十二个月，闰年为十三个月。月份分为大月和小月，大月三十天，小月二十九天，其平均历月等于一个朔望月。&lt;/p>
+&lt;h2 id="环境">环境
+&lt;/h2>&lt;ul>
+&lt;li>Go 1.16&lt;/li>
+&lt;li>github.com/nosixtools/solarlunar 0.0.0&lt;/li>
+&lt;/ul>
+&lt;h2 id="库">库
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="nx">github&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">com&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">nosixtools&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">solarlunar&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>该库支持1900~2049年。所以项目要跑到2049年后的童鞋就要注意&amp;hellip;&amp;hellip;&lt;/p>
+&lt;p>当然，该库还支持阳历转农历、节假日计算等，有兴趣大家可以自行去了解下。&lt;/p>
+&lt;h2 id="使用">使用
+&lt;/h2>&lt;h3 id="判断闰年">判断闰年
+&lt;/h3>&lt;p>该库不支持闰年判断，所以需要自己去实现闰年的判断，其参数类型为&lt;code>Boolean&lt;/code>。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">IsALeapYear&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">year&lt;/span> &lt;span class="kt">int&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">result&lt;/span> &lt;span class="kt">bool&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">year&lt;/span>&lt;span class="o">%&lt;/span>&lt;span class="mi">4&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="nx">year&lt;/span>&lt;span class="o">%&lt;/span>&lt;span class="mi">100&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="nx">year&lt;/span>&lt;span class="o">%&lt;/span>&lt;span class="mi">400&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">result&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="kc">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="转换">转换
+&lt;/h3>&lt;p>需要转换的阳历日期格式是固定的，是&lt;code>2006-01-02&lt;/code>。此处以农历&lt;code>2021-07-17&lt;/code>为例。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">lunarDate&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="s">&amp;#34;2021-07-17&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">solarlunar&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">LunarToSolar&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">lunarDate&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nf">IsALeapYear&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">time&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Now&lt;/span>&lt;span class="p">().&lt;/span>&lt;span class="nf">Year&lt;/span>&lt;span class="p">())))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>输出为：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2021&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">08&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">24&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="全部代码">全部代码
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">package&lt;/span> &lt;span class="nx">main&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;time&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;github.com/nosixtools/solarlunar&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">lunarDate&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="s">&amp;#34;2021-07-17&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">solarlunar&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">LunarToSolar&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">lunarDate&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nf">IsALeapYear&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">time&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Now&lt;/span>&lt;span class="p">().&lt;/span>&lt;span class="nf">Year&lt;/span>&lt;span class="p">())))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">IsALeapYear&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">year&lt;/span> &lt;span class="kt">int&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">result&lt;/span> &lt;span class="kt">bool&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">year&lt;/span>&lt;span class="o">%&lt;/span>&lt;span class="mi">4&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="nx">year&lt;/span>&lt;span class="o">%&lt;/span>&lt;span class="mi">100&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="nx">year&lt;/span>&lt;span class="o">%&lt;/span>&lt;span class="mi">400&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">result&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="kc">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>搜索</title><link>https://hunterji.com/zh-cn/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://hunterji.com/zh-cn/search/</guid><description/></item><item><title>我的产品</title><link>https://hunterji.com/zh-cn/products/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://hunterji.com/zh-cn/products/</guid><description/></item></channel></rss>

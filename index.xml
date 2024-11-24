@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hunter Ji</title><link>https://hunterji.com/</link><description>Recent content on Hunter Ji</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 16 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://hunterji.com/index.xml" rel="self" type="application/rss+xml"/><item><title>How to add custom fonts to SwiftUI project in Xcode</title><link>https://hunterji.com/posts/how-to-add-custom-fonts-to-swiftui-project-in-xcode/</link><pubDate>Tue, 16 Jul 2024 00:00:00 +0000</pubDate><guid>https://hunterji.com/posts/how-to-add-custom-fonts-to-swiftui-project-in-xcode/</guid><description>&lt;h2 id="my-environment">My Environment
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hunter Ji</title><link>https://hunterji.com/</link><description>Recent content on Hunter Ji</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 16 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://hunterji.com/index.xml" rel="self" type="application/rss+xml"/><item><title>How to add custom fonts to SwiftUI project in Xcode</title><link>https://hunterji.com/post/how-to-add-custom-fonts-to-swiftui-project-in-xcode/</link><pubDate>Tue, 16 Jul 2024 00:00:00 +0000</pubDate><guid>https://hunterji.com/post/how-to-add-custom-fonts-to-swiftui-project-in-xcode/</guid><description>&lt;img src="https://hunterji.com/post/how-to-add-custom-fonts-to-swiftui-project-in-xcode/normal.jpg" alt="Featured image of post How to add custom fonts to SwiftUI project in Xcode" />&lt;h2 id="my-environment">My Environment
 &lt;/h2>&lt;p>The following development environment was used:&lt;/p>
 &lt;ul>
 &lt;li>
@@ -13,15 +13,27 @@
 >Google Fonts&lt;/a>.&lt;/p>
 &lt;h2 id="add-the-font-to-xcode">Add the Font to Xcode
 &lt;/h2>&lt;p>Create a new folder named &lt;code>Fonts&lt;/code> in project, and then drag the font file into it. Here, my font file named &lt;code>EduAUVICWANTHand-Regular.ttf&lt;/code>.&lt;/p>
-&lt;p>&lt;img src="https://hunterji.com/posts/how-to-add-custom-fonts-to-swiftui-project-in-xcode/how-to-add-custom-fonts-to-swiftui-project-in-xcode-0.png"
+&lt;p>&lt;img src="https://hunterji.com/post/how-to-add-custom-fonts-to-swiftui-project-in-xcode/how-to-add-custom-fonts-to-swiftui-project-in-xcode-0.png"
+width="2042"
+height="1236"
+srcset="https://hunterji.com/post/how-to-add-custom-fonts-to-swiftui-project-in-xcode/how-to-add-custom-fonts-to-swiftui-project-in-xcode-0_hu5225884051102129944.png 480w, https://hunterji.com/post/how-to-add-custom-fonts-to-swiftui-project-in-xcode/how-to-add-custom-fonts-to-swiftui-project-in-xcode-0_hu9811205510934520816.png 1024w"
 loading="lazy"
 alt="how-to-add-custom-fonts-to-swiftui-project-in-xcode-0"
+class="gallery-image"
+data-flex-grow="165"
+data-flex-basis="396px"
 >&lt;/p>
 &lt;h2 id="add-the-font-to-the-infoplist">Add the Font to the Info.plist
 &lt;/h2>&lt;p>In the Info.plist, create a new item named &lt;code>Fonts provided by application&lt;/code>, then add the font filename to the first item. Note that you need to include the file extension here.&lt;/p>
-&lt;p>&lt;img src="https://hunterji.com/posts/how-to-add-custom-fonts-to-swiftui-project-in-xcode/how-to-add-custom-fonts-to-swiftui-project-in-xcode-1.png"
+&lt;p>&lt;img src="https://hunterji.com/post/how-to-add-custom-fonts-to-swiftui-project-in-xcode/how-to-add-custom-fonts-to-swiftui-project-in-xcode-1.png"
+width="3584"
+height="2030"
+srcset="https://hunterji.com/post/how-to-add-custom-fonts-to-swiftui-project-in-xcode/how-to-add-custom-fonts-to-swiftui-project-in-xcode-1_hu14953392697056744204.png 480w, https://hunterji.com/post/how-to-add-custom-fonts-to-swiftui-project-in-xcode/how-to-add-custom-fonts-to-swiftui-project-in-xcode-1_hu11720959243323411921.png 1024w"
 loading="lazy"
 alt="how-to-add-custom-fonts-to-swiftui-project-in-xcode-1"
+class="gallery-image"
+data-flex-grow="176"
+data-flex-basis="423px"
 >&lt;/p>
 &lt;h2 id="add-the-font-to-the-customfontswift">Add the Font to the CustomFont.swift
 &lt;/h2>&lt;p>Of course, you can also skip this step and use strings directly. However, for the convenience of management and use, it is recommended to handle them uniformly here.
@@ -82,102 +94,7 @@ Create a new file named &lt;code>Models/CustomFont.swift&lt;/code> , then comple
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>How to make empty space clickable in SwiftUI</title><link>https://hunterji.com/posts/how-to-make-empty-space-clickable-in-swiftui/</link><pubDate>Thu, 09 May 2024 00:00:00 +0000</pubDate><guid>https://hunterji.com/posts/how-to-make-empty-space-clickable-in-swiftui/</guid><description>&lt;h2 id="question">Question
-&lt;/h2>&lt;p>In SwiftUI, we often use &lt;code>VStack&lt;/code> and &lt;code>HStack&lt;/code>. But sometimes only text is clickable, while the empty space is not.
-So, how then can we make the empty space also clickable in SwiftUI?&lt;/p>
-&lt;p>There are two examples:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
-&lt;/span>&lt;span class="lnt"> 2
-&lt;/span>&lt;span class="lnt"> 3
-&lt;/span>&lt;span class="lnt"> 4
-&lt;/span>&lt;span class="lnt"> 5
-&lt;/span>&lt;span class="lnt"> 6
-&lt;/span>&lt;span class="lnt"> 7
-&lt;/span>&lt;span class="lnt"> 8
-&lt;/span>&lt;span class="lnt"> 9
-&lt;/span>&lt;span class="lnt">10
-&lt;/span>&lt;span class="lnt">11
-&lt;/span>&lt;span class="lnt">12
-&lt;/span>&lt;span class="lnt">13
-&lt;/span>&lt;span class="lnt">14
-&lt;/span>&lt;span class="lnt">15
-&lt;/span>&lt;span class="lnt">16
-&lt;/span>&lt;span class="lnt">17
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-swift" data-lang="swift">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// example 1&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">HStack&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Text&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;logout&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">.&lt;/span>&lt;span class="n">onTapGesture&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;tap&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// example 2&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Button&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">action&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;tap&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">},&lt;/span> &lt;span class="n">label&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">HStack&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Text&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;logout&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Spacer&lt;/span>&lt;span class="p">()&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">})&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Both of these examples include click events, but the empty space is not clickable in either of them.&lt;/p>
-&lt;h2 id="solution">Solution
-&lt;/h2>&lt;p>To make the empty space clickable, just add &lt;code>.contentShape(Rectangle())&lt;/code> to &lt;code>HStack&lt;/code> or &lt;code>VStack&lt;/code>.
-However, if there is only &lt;code>Text&lt;/code> in the &lt;code>HStack&lt;/code>, you need to add &lt;code>Spacer()&lt;/code> to fill the empty space.&lt;/p>
-&lt;p>These are the modified solutions:&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
-&lt;/span>&lt;span class="lnt"> 2
-&lt;/span>&lt;span class="lnt"> 3
-&lt;/span>&lt;span class="lnt"> 4
-&lt;/span>&lt;span class="lnt"> 5
-&lt;/span>&lt;span class="lnt"> 6
-&lt;/span>&lt;span class="lnt"> 7
-&lt;/span>&lt;span class="lnt"> 8
-&lt;/span>&lt;span class="lnt"> 9
-&lt;/span>&lt;span class="lnt">10
-&lt;/span>&lt;span class="lnt">11
-&lt;/span>&lt;span class="lnt">12
-&lt;/span>&lt;span class="lnt">13
-&lt;/span>&lt;span class="lnt">14
-&lt;/span>&lt;span class="lnt">15
-&lt;/span>&lt;span class="lnt">16
-&lt;/span>&lt;span class="lnt">17
-&lt;/span>&lt;span class="lnt">18
-&lt;/span>&lt;span class="lnt">19
-&lt;/span>&lt;span class="lnt">20
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-swift" data-lang="swift">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// example 1&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">HStack&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Text&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;logout&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Spacer&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="c1">// fill the empty space&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">.&lt;/span>&lt;span class="n">contentShape&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Rectangle&lt;/span>&lt;span class="p">())&lt;/span> &lt;span class="c1">// make the empty space clickable&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">.&lt;/span>&lt;span class="n">onTapGesture&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;tap&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// example 2&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Button&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">action&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="bp">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;tap&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">},&lt;/span> &lt;span class="n">label&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">HStack&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Text&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;logout&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Spacer&lt;/span>&lt;span class="p">()&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="n">contentShape&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Rectangle&lt;/span>&lt;span class="p">())&lt;/span> &lt;span class="c1">// Note that this must be attached right after the HStack, not on the Button&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">})&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div></description></item><item><title>Getting Fancy with Rust and WebAssembly (Part 4) - Smaller wasm file size</title><link>https://hunterji.com/posts/getting-fancy-with-rust-and-webassembly-part-4-smaller-wasm-file-size/</link><pubDate>Fri, 27 Oct 2023 00:00:00 +0000</pubDate><guid>https://hunterji.com/posts/getting-fancy-with-rust-and-webassembly-part-4-smaller-wasm-file-size/</guid><description>&lt;img src="https://hunterji.com/posts/getting-fancy-with-rust-and-webassembly-part-4-smaller-wasm-file-size/cover.jpg" alt="Featured image of post Getting Fancy with Rust and WebAssembly (Part 4) - Smaller wasm file size" />&lt;h2 id="introduction">Introduction
+&lt;/div></description></item><item><title>Getting Fancy with Rust and WebAssembly (Part 4) - Smaller wasm file size</title><link>https://hunterji.com/post/getting-fancy-with-rust-and-webassembly-part-4-smaller-wasm-file-size/</link><pubDate>Fri, 27 Oct 2023 00:00:00 +0000</pubDate><guid>https://hunterji.com/post/getting-fancy-with-rust-and-webassembly-part-4-smaller-wasm-file-size/</guid><description>&lt;img src="https://hunterji.com/img/cover.jpg" alt="Featured image of post Getting Fancy with Rust and WebAssembly (Part 4) - Smaller wasm file size" />&lt;h2 id="introduction">Introduction
 &lt;/h2>&lt;p>In the previous article &lt;a class="link" href="https://hunterji.com/blog/getting-fancy-with-rust-and-webAssembly-3" target="_blank" rel="noopener"
 >&amp;ldquo;Getting Fancy with Rust and WebAssembly (Part 3) - DOM Manipulation and Type Conversion&amp;rdquo;&lt;/a>, we discussed the interaction between Rust and JS, including mutual function calls between Rust and JS. A particularly mind-blowing feature was using JS to call Rust structs. JS itself doesn&amp;rsquo;t even have structs, yet it can call Rust structs. This is really great for the development experience of Rust developers!&lt;/p>
 &lt;p>Based on the previous series of articles, it&amp;rsquo;s already sufficient to develop a complete functionality using Rust.&lt;/p>
@@ -452,7 +369,7 @@ However, if there is only &lt;code>Text&lt;/code> in the &lt;code>HStack&lt;/cod
 &lt;h2 id="conclusion">Conclusion
 &lt;/h2>&lt;p>In this article, we introduced wasm file size optimization solutions from three levels: code level, network level, and physical level, with a total of four solutions.&lt;/p>
 &lt;p>Finally, after stacking all the buffs, the current case (accumulated in this series of articles) can reduce the size by &lt;strong>77%&lt;/strong>, which really feels great, haha.&lt;/p>
-&lt;p>Hope this can be helpful to everyone.&lt;/p></description></item><item><title>Getting Fancy with Rust and WebAssembly (Part 3) - Rust and JS interaction</title><link>https://hunterji.com/posts/getting-fancy-with-rust-and-webassembly-part-3-rust-and-js-interaction/</link><pubDate>Mon, 26 Jun 2023 00:00:00 +0000</pubDate><guid>https://hunterji.com/posts/getting-fancy-with-rust-and-webassembly-part-3-rust-and-js-interaction/</guid><description>&lt;img src="https://hunterji.com/posts/getting-fancy-with-rust-and-webassembly-part-3-rust-and-js-interaction/cover.jpg" alt="Featured image of post Getting Fancy with Rust and WebAssembly (Part 3) - Rust and JS interaction" />&lt;h2 id="introduction">Introduction
+&lt;p>Hope this can be helpful to everyone.&lt;/p></description></item><item><title>Getting Fancy with Rust and WebAssembly (Part 3) - Rust and JS interaction</title><link>https://hunterji.com/post/getting-fancy-with-rust-and-webassembly-part-3-rust-and-js-interaction/</link><pubDate>Mon, 26 Jun 2023 00:00:00 +0000</pubDate><guid>https://hunterji.com/post/getting-fancy-with-rust-and-webassembly-part-3-rust-and-js-interaction/</guid><description>&lt;img src="https://hunterji.com/img/cover.jpg" alt="Featured image of post Getting Fancy with Rust and WebAssembly (Part 3) - Rust and JS interaction" />&lt;h2 id="introduction">Introduction
 &lt;/h2>&lt;p>In the previous article &lt;a class="link" href="https://hunterji.com/blog/getting-fancy-with-rust-and-webAssembly-2" target="_blank" rel="noopener"
 >&amp;ldquo;Getting Fancy with Rust and WebAssembly (Part 2) - DOM Manipulation and Type Conversion&amp;rdquo;&lt;/a>, we described how to use Rust to manipulate the DOM and implement various methods for type conversion between Rust and JS.&lt;/p>
 &lt;p>When developing web applications, Wasm modules written in Rust can provide higher performance and better security. However, to integrate with existing JavaScript code, interaction between Rust and JS must be implemented. The main purpose of Rust-JS interaction is to combine the advantages of both languages to achieve better web applications.&lt;/p>
@@ -904,7 +821,7 @@ However, if there is only &lt;code>Text&lt;/code> in the &lt;code>HStack&lt;/cod
 &lt;/h2>&lt;p>In this article, we mainly discussed the interaction between Rust and JS, reflected in the mutual calls between Rust and JS, which is based on the type conversion in &lt;a class="link" href="https://hunterji.com/blog/getting-fancy-with-rust-and-webAssembly-2" target="_blank" rel="noopener"
 >the previous article&lt;/a>.&lt;/p>
 &lt;p>The learning cost of mutual function calls between Rust and JS is still relatively high, and compared to writing wasm with Go, Rust&amp;rsquo;s granularity is very fine, almost can be said to be at will.&lt;/p>
-&lt;p>The most mind-blowing thing is exporting Rust&amp;rsquo;s struct for JS to use, which is a very great experience for the interaction between Rust and JS.&lt;/p></description></item><item><title>Getting Fancy with Rust and WebAssembly (Part 2) - DOM Manipulation and Type Conversion</title><link>https://hunterji.com/posts/getting-fancy-with-rust-and-webassembly-part-2-dom-manipulation-and-type-conversion/</link><pubDate>Wed, 14 Jun 2023 00:00:00 +0000</pubDate><guid>https://hunterji.com/posts/getting-fancy-with-rust-and-webassembly-part-2-dom-manipulation-and-type-conversion/</guid><description>&lt;img src="https://hunterji.com/posts/getting-fancy-with-rust-and-webassembly-part-2-dom-manipulation-and-type-conversion/cover.jpg" alt="Featured image of post Getting Fancy with Rust and WebAssembly (Part 2) - DOM Manipulation and Type Conversion" />&lt;h2 id="introduction">Introduction
+&lt;p>The most mind-blowing thing is exporting Rust&amp;rsquo;s struct for JS to use, which is a very great experience for the interaction between Rust and JS.&lt;/p></description></item><item><title>Getting Fancy with Rust and WebAssembly (Part 2) - DOM Manipulation and Type Conversion</title><link>https://hunterji.com/post/getting-fancy-with-rust-and-webassembly-part-2-dom-manipulation-and-type-conversion/</link><pubDate>Wed, 14 Jun 2023 00:00:00 +0000</pubDate><guid>https://hunterji.com/post/getting-fancy-with-rust-and-webassembly-part-2-dom-manipulation-and-type-conversion/</guid><description>&lt;img src="https://hunterji.com/img/cover.jpg" alt="Featured image of post Getting Fancy with Rust and WebAssembly (Part 2) - DOM Manipulation and Type Conversion" />&lt;h2 id="introduction">Introduction
 &lt;/h2>&lt;p>In the previous article &lt;a class="link" href="https://hunterji.com/blog/getting-fancy-with-rust-and-webAssembly-1" target="_blank" rel="noopener"
 >&amp;ldquo;Getting Fancy with Rust and WebAssembly (Part 1) - Quick Start&amp;rdquo;&lt;/a>, we described how to create a project and quickly generate wasm for use in the frontend, taking the first step towards creating cool stuff.&lt;/p>
 &lt;p>When developing web applications, Wasm modules written in Rust can provide higher performance and better security. However, to integrate with existing JavaScript code, interaction between Rust and JS must be implemented. The main purpose of Rust-JS interaction is to combine the strengths of both languages to achieve better web applications.&lt;/p>
@@ -1069,24 +986,80 @@ However, if there is only &lt;code>Text&lt;/code> in the &lt;code>HStack&lt;/cod
 &lt;p>Fortunately, Rust&amp;rsquo;s type support is really rich!&lt;/p>
 &lt;h3 id="1-basic-types">1. Basic Types
 &lt;/h3>&lt;p>Basic types are quite simple, and Rust&amp;rsquo;s generics also support many types well. Here&amp;rsquo;s a mapping table of basic types:&lt;/p>
-&lt;ul>
-&lt;li>i8: number&lt;/li>
-&lt;li>i16: number&lt;/li>
-&lt;li>i32: number&lt;/li>
-&lt;li>i64: BigInt&lt;/li>
-&lt;li>u8: number&lt;/li>
-&lt;li>u16: number&lt;/li>
-&lt;li>u32: number&lt;/li>
-&lt;li>u64: BigInt&lt;/li>
-&lt;li>f32: number&lt;/li>
-&lt;li>f64: number&lt;/li>
-&lt;li>bool: boolean&lt;/li>
-&lt;li>char: string&lt;/li>
-&lt;li>&amp;amp;str: string&lt;/li>
-&lt;li>String: string&lt;/li>
-&lt;li>&amp;amp;[T] (e.g.: &amp;amp;[u8]): [T] (e.g.: Uint8Array)&lt;/li>
-&lt;li>Vec&amp;lt;T&amp;gt;: Array&lt;/li>
-&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Rust类型&lt;/th>
+&lt;th>JavaScript类型&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>i8&lt;/td>
+&lt;td>number&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>i16&lt;/td>
+&lt;td>number&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>i32&lt;/td>
+&lt;td>number&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>i64&lt;/td>
+&lt;td>BigInt&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>u8&lt;/td>
+&lt;td>number&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>u16&lt;/td>
+&lt;td>number&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>u32&lt;/td>
+&lt;td>number&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>u64&lt;/td>
+&lt;td>BigInt&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>f32&lt;/td>
+&lt;td>number&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>f64&lt;/td>
+&lt;td>number&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>bool&lt;/td>
+&lt;td>boolean&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>char&lt;/td>
+&lt;td>string&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&amp;amp;str&lt;/td>
+&lt;td>string&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>String&lt;/td>
+&lt;td>string&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&amp;amp;[T] 例如：&amp;amp;[u8]&lt;/td>
+&lt;td>[T] 例如：Uint8Array&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Vec&amp;lt;T&amp;gt;&lt;/td>
+&lt;td>Array&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
 &lt;h3 id="2-basic-type-conversion-example">2. Basic Type Conversion Example
 &lt;/h3>&lt;p>In the &lt;code>lib.rs&lt;/code> file, create a function that takes a few types as parameters, then reads and prints them:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -1708,7 +1681,7 @@ However, if there is only &lt;code>Text&lt;/code> in the &lt;code>HStack&lt;/cod
 &lt;/div>
 &lt;/div>&lt;h2 id="conclusion">Conclusion
 &lt;/h2>&lt;p>In this article, we mainly discussed how to use Rust to implement DOM operations. Readers can find suitable methods to implement their own scenarios based on the methods. Secondly, we also discussed the type conversion between Rust and JS, from the mapping of basic types of each, to Rust&amp;rsquo;s unique &lt;code>Result&lt;/code>, to directly importing JS types. Of course, it should be noted that directly importing JS types and mapping JS types to Rust&amp;rsquo;s basic types should not be mixed as much as possible. Mixing will lead to the need for manual type conversion, causing performance loss.&lt;/p>
-&lt;p>At this point, we&amp;rsquo;ve taken another step towards creating cool stuff with Rust and WebAssembly~😼&lt;/p></description></item><item><title>Getting Fancy with Rust and WebAssembly (Part 1) - Quick Start</title><link>https://hunterji.com/posts/getting-fancy-with-rust-and-webassembly-part-1-quick-start/</link><pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate><guid>https://hunterji.com/posts/getting-fancy-with-rust-and-webassembly-part-1-quick-start/</guid><description>&lt;img src="https://hunterji.com/posts/getting-fancy-with-rust-and-webassembly-part-1-quick-start/cover.jpg" alt="Featured image of post Getting Fancy with Rust and WebAssembly (Part 1) - Quick Start" />&lt;h2 id="introduction">Introduction
+&lt;p>At this point, we&amp;rsquo;ve taken another step towards creating cool stuff with Rust and WebAssembly~😼&lt;/p></description></item><item><title>Getting Fancy with Rust and WebAssembly (Part 1) - Quick Start</title><link>https://hunterji.com/post/getting-fancy-with-rust-and-webassembly-part-1-quick-start/</link><pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate><guid>https://hunterji.com/post/getting-fancy-with-rust-and-webassembly-part-1-quick-start/</guid><description>&lt;img src="https://hunterji.com/img/cover.jpg" alt="Featured image of post Getting Fancy with Rust and WebAssembly (Part 1) - Quick Start" />&lt;h2 id="introduction">Introduction
 &lt;/h2>&lt;p>&lt;a class="link" href="https://developer.mozilla.org/en-US/docs/WebAssembly" target="_blank" rel="noopener"
 >WebAssembly&lt;/a> is a new type of code that can be run in modern web browsers - it is a low-level assembly-like language with a compact binary format that runs with near-native performance and provides languages such as C/C++ with a compilation target so that they can run on the web. It is also designed to run alongside JavaScript, allowing both to work together.&lt;/p>
 &lt;p>I previously wrote an article about how to develop WebAssembly using Golang - &lt;a class="link" href="https://github.com/hunter-ji/Blog/issues/69" target="_blank" rel="noopener"

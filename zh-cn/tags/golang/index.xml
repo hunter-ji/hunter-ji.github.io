@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Golang on 小橙</title><link>https://hunterji.com/zh-cn/tags/golang/</link><description>Recent content in Golang on 小橙</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 09 Feb 2023 13:15:34 +0000</lastBuildDate><atom:link href="https://hunterji.com/zh-cn/tags/golang/index.xml" rel="self" type="application/rss+xml"/><item><title>WebAssembly -- 未来前端开发的必备技能</title><link>https://hunterji.com/zh-cn/posts/webassembly--%E6%9C%AA%E6%9D%A5%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%9A%84%E5%BF%85%E5%A4%87%E6%8A%80%E8%83%BD/</link><pubDate>Thu, 09 Feb 2023 13:15:34 +0000</pubDate><guid>https://hunterji.com/zh-cn/posts/webassembly--%E6%9C%AA%E6%9D%A5%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%9A%84%E5%BF%85%E5%A4%87%E6%8A%80%E8%83%BD/</guid><description>&lt;img src="https://hunterji.com/zh-cn/posts/webassembly--%E6%9C%AA%E6%9D%A5%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%9A%84%E5%BF%85%E5%A4%87%E6%8A%80%E8%83%BD/cover.jpg" alt="Featured image of post WebAssembly -- 未来前端开发的必备技能" />&lt;h2 id="前言">前言
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Golang on 小橙</title><link>https://hunterji.com/zh-cn/tags/golang/</link><description>Recent content in Golang on 小橙</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 09 Feb 2023 13:15:34 +0000</lastBuildDate><atom:link href="https://hunterji.com/zh-cn/tags/golang/index.xml" rel="self" type="application/rss+xml"/><item><title>如何使用Go构建WebAssembly</title><link>https://hunterji.com/zh-cn/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8go%E6%9E%84%E5%BB%BAwebassembly/</link><pubDate>Thu, 09 Feb 2023 13:15:34 +0000</pubDate><guid>https://hunterji.com/zh-cn/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8go%E6%9E%84%E5%BB%BAwebassembly/</guid><description>&lt;img src="https://hunterji.com/zh-cn/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8go%E6%9E%84%E5%BB%BAwebassembly/cover.jpg" alt="Featured image of post 如何使用Go构建WebAssembly" />&lt;h2 id="前言">前言
 &lt;/h2>&lt;p>&lt;a class="link" href="https://developer.mozilla.org/zh-CN/docs/WebAssembly" target="_blank" rel="noopener"
 >WebAssembly&lt;/a> 是一种新的编码方式，可以在现代的网络浏览器中运行 － 它是一种低级的类汇编语言，具有紧凑的二进制格式，可以接近原生的性能运行，并为诸如 C / C ++等语言提供一个编译目标，以便它们可以在 Web 上运行。它也被设计为可以与 JavaScript 共存，允许两者一起工作。&lt;/p>
 &lt;h2 id="快速上手">快速上手
@@ -833,4 +833,120 @@ alt="go_wasm_canvas"
 >Go WebAssembly (Wasm) 简明教程&lt;/a>&lt;/li>
 &lt;li>&lt;a class="link" href="https://withblue.ink/2020/10/03/go-webassembly-http-requests-and-promises.html" target="_blank" rel="noopener"
 >Go, WebAssembly, HTTP requests and Promises&lt;/a>&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;/ul></description></item><item><title>Golang实现农历转换阳历</title><link>https://hunterji.com/zh-cn/post/golang%E5%AE%9E%E7%8E%B0%E5%86%9C%E5%8E%86%E8%BD%AC%E6%8D%A2%E9%98%B3%E5%8E%86/</link><pubDate>Tue, 31 Aug 2021 09:08:57 +0000</pubDate><guid>https://hunterji.com/zh-cn/post/golang%E5%AE%9E%E7%8E%B0%E5%86%9C%E5%8E%86%E8%BD%AC%E6%8D%A2%E9%98%B3%E5%8E%86/</guid><description>&lt;img src="https://hunterji.com/zh-cn/post/golang%E5%AE%9E%E7%8E%B0%E5%86%9C%E5%8E%86%E8%BD%AC%E6%8D%A2%E9%98%B3%E5%8E%86/normal.jpg" alt="Featured image of post Golang实现农历转换阳历" />&lt;h2 id="前言">前言
+&lt;/h2>&lt;p>因为项目需求，需要去检测用户的农历生日。虽然后来找到了合适的库，但是首先先解释下&lt;code>农历&lt;/code>的定义，也是去了解才知道，原来农历不是阴历。&lt;/p>
+&lt;p>农历属于阴阳合历，其年份分为平年和闰年。平年为十二个月，闰年为十三个月。月份分为大月和小月，大月三十天，小月二十九天，其平均历月等于一个朔望月。&lt;/p>
+&lt;h2 id="环境">环境
+&lt;/h2>&lt;ul>
+&lt;li>Go 1.16&lt;/li>
+&lt;li>github.com/nosixtools/solarlunar 0.0.0&lt;/li>
+&lt;/ul>
+&lt;h2 id="库">库
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="nx">github&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">com&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">nosixtools&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">solarlunar&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>该库支持1900~2049年。所以项目要跑到2049年后的童鞋就要注意&amp;hellip;&amp;hellip;&lt;/p>
+&lt;p>当然，该库还支持阳历转农历、节假日计算等，有兴趣大家可以自行去了解下。&lt;/p>
+&lt;h2 id="使用">使用
+&lt;/h2>&lt;h3 id="判断闰年">判断闰年
+&lt;/h3>&lt;p>该库不支持闰年判断，所以需要自己去实现闰年的判断，其参数类型为&lt;code>Boolean&lt;/code>。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">IsALeapYear&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">year&lt;/span> &lt;span class="kt">int&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">result&lt;/span> &lt;span class="kt">bool&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">year&lt;/span>&lt;span class="o">%&lt;/span>&lt;span class="mi">4&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="nx">year&lt;/span>&lt;span class="o">%&lt;/span>&lt;span class="mi">100&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="nx">year&lt;/span>&lt;span class="o">%&lt;/span>&lt;span class="mi">400&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">result&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="kc">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="转换">转换
+&lt;/h3>&lt;p>需要转换的阳历日期格式是固定的，是&lt;code>2006-01-02&lt;/code>。此处以农历&lt;code>2021-07-17&lt;/code>为例。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">lunarDate&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="s">&amp;#34;2021-07-17&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">solarlunar&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">LunarToSolar&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">lunarDate&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nf">IsALeapYear&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">time&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Now&lt;/span>&lt;span class="p">().&lt;/span>&lt;span class="nf">Year&lt;/span>&lt;span class="p">())))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>输出为：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="mi">2021&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">08&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">24&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="全部代码">全部代码
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">package&lt;/span> &lt;span class="nx">main&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;time&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;github.com/nosixtools/solarlunar&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">lunarDate&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="s">&amp;#34;2021-07-17&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">solarlunar&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">LunarToSolar&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">lunarDate&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nf">IsALeapYear&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">time&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Now&lt;/span>&lt;span class="p">().&lt;/span>&lt;span class="nf">Year&lt;/span>&lt;span class="p">())))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">IsALeapYear&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">year&lt;/span> &lt;span class="kt">int&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">result&lt;/span> &lt;span class="kt">bool&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">year&lt;/span>&lt;span class="o">%&lt;/span>&lt;span class="mi">4&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="nx">year&lt;/span>&lt;span class="o">%&lt;/span>&lt;span class="mi">100&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="nx">year&lt;/span>&lt;span class="o">%&lt;/span>&lt;span class="mi">400&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">result&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="kc">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

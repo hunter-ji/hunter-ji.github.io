@@ -1295,7 +1295,7 @@
 &lt;/div>&lt;h3 id="result">Result
 &lt;/h3>&lt;p>&lt;code>Result&lt;/code>在Rust中是一个很重要的存在，经常写Rust的话，也不想在写WebAssembly时改变开发习惯。&lt;/p>
 &lt;p>其实对于JS而言，&lt;code>Result&lt;/code>可以直接在&lt;code>catch&lt;/code>中捕获到，只是说，这里我们需要定义好参数类型。&lt;/p>
-&lt;h4 id="1-使用result返回报错">1 使用Result返回报错
+&lt;h4 id="使用result返回报错">使用Result返回报错
 &lt;/h4>&lt;p>首先来一个只返回报错的场景：&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -1385,7 +1385,7 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">100 is ok
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h4 id="2-使用result返回正常值和错误">2 使用Result返回正常值和错误
+&lt;/div>&lt;h4 id="使用result返回正常值和错误">使用Result返回正常值和错误
 &lt;/h4>&lt;p>那么，如果想既返回正常值，也想返回错误呢？Rust返回一个&lt;code>Result&lt;/code>是没有问题，那么JS怎么解析呢？&lt;/p>
 &lt;p>直接上Rust代码：&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -1480,7 +1480,7 @@
 &lt;/div>&lt;h3 id="直接引入js类型">直接引入JS类型
 &lt;/h3>&lt;p>如果你想更直接一点，那么可以直接引入JS类型！这里主要是利用&lt;code>js-sys&lt;/code>这个依赖，可以在&lt;a class="link" href="https://docs.rs/js-sys/latest/js_sys/" target="_blank" rel="noopener"
 >官方文档&lt;/a>上看到很多JS的类型和函数，直接引入即可使用。当然，一定场景下，直接引入的类型，是需要手动转换类型的。&lt;/p>
-&lt;h4 id="1-配置依赖">1 配置依赖
+&lt;h4 id="配置依赖-1">配置依赖
 &lt;/h4>&lt;p>在&lt;code>Cargo.toml&lt;/code>中添加&lt;code>js-sys&lt;/code>依赖：&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -1496,7 +1496,7 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">js-sys&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;0.3.61&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h4 id="2-uint8array">2 Uint8Array
+&lt;/div>&lt;h4 id="uint8array">Uint8Array
 &lt;/h4>&lt;p>首先以&lt;code>Uint8Array&lt;/code>举例，在&lt;code>lib.rs&lt;/code>头部引入类型：&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -1570,7 +1570,7 @@
 &lt;/blockquote>
 &lt;p>可以在代码中看到，直接引入的&lt;code>Uint8Array&lt;/code>有自己的方法，一定场景下，需要转换类型，但是最好避免进行类型转换，而直接使用其自带的方法。&lt;/p>
 &lt;p>这里可以简要总结下，就是最好一定场景内全部使用直接引入的JS类型，或者直接全部使用Rust类型来代替JS类型，两者都存在场景下，手动转换类型是件很糟糕的事。&lt;/p>
-&lt;h4 id="3-date">3 Date
+&lt;h4 id="date">Date
 &lt;/h4>&lt;p>&lt;code>Date&lt;/code>类型，在上面的篇章中都没有提及，这里可以直接引入JS的&lt;code>Date&lt;/code>类型来使用。&lt;/p>
 &lt;p>首先是引入类型：&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">

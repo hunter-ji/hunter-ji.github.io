@@ -1,4 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hunter Ji</title><link>https://hunterji.com/</link><description>Recent content on Hunter Ji</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 05 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://hunterji.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Funny design exercise :P</title><link>https://hunterji.com/post/funny-design-exercise-p/</link><pubDate>Thu, 05 Dec 2024 00:00:00 +0000</pubDate><guid>https://hunterji.com/post/funny-design-exercise-p/</guid><description>&lt;img src="https://hunterji.com/post/funny-design-exercise-p/cover.png" alt="Featured image of post Funny design exercise :P" />&lt;video width="100%" autoplay loop muted>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hunter Ji</title><link>https://hunterji.com/</link><description>Recent content on Hunter Ji</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 07 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://hunterji.com/index.xml" rel="self" type="application/rss+xml"/><item><title>I redesigned a icon for Folder Slice</title><link>https://hunterji.com/post/i-redesigned-a-icon-for-folder-slice/</link><pubDate>Sat, 07 Dec 2024 00:00:00 +0000</pubDate><guid>https://hunterji.com/post/i-redesigned-a-icon-for-folder-slice/</guid><description>&lt;p>I redesigned a logo for &lt;a class="link" href="https://folderslice.com" target="_blank" rel="noopener"
+>Folder Slice&lt;/a>, and i think it looks pretty good! 😄&lt;/p>
+&lt;p>&lt;img src="https://hunterji.com/post/i-redesigned-a-icon-for-folder-slice/cover.png"
+width="564"
+height="367"
+srcset="https://hunterji.com/post/i-redesigned-a-icon-for-folder-slice/cover_hu199041684619197883.png 480w, https://hunterji.com/post/i-redesigned-a-icon-for-folder-slice/cover_hu8273865804181399619.png 1024w"
+loading="lazy"
+alt="folder slice new icon"
+class="gallery-image"
+data-flex-grow="153"
+data-flex-basis="368px"
+>&lt;/p></description></item><item><title>Funny design exercise :P</title><link>https://hunterji.com/post/funny-design-exercise-p/</link><pubDate>Thu, 05 Dec 2024 00:00:00 +0000</pubDate><guid>https://hunterji.com/post/funny-design-exercise-p/</guid><description>&lt;img src="https://hunterji.com/post/funny-design-exercise-p/cover.png" alt="Featured image of post Funny design exercise :P" />&lt;video width="100%" autoplay loop muted>
 &lt;source src="funny-design-exercise-1.mp4" type="video/mp4">
 Your browser does not support the video tag.
 &lt;/video></description></item><item><title>How to add custom fonts to SwiftUI project in Xcode</title><link>https://hunterji.com/post/how-to-add-custom-fonts-to-swiftui-project-in-xcode/</link><pubDate>Tue, 16 Jul 2024 00:00:00 +0000</pubDate><guid>https://hunterji.com/post/how-to-add-custom-fonts-to-swiftui-project-in-xcode/</guid><description>&lt;img src="https://hunterji.com/post/how-to-add-custom-fonts-to-swiftui-project-in-xcode/normal.jpg" alt="Featured image of post How to add custom fonts to SwiftUI project in Xcode" />&lt;h2 id="my-environment">My Environment
@@ -111,8 +122,8 @@ Create a new file named &lt;code>Models/CustomFont.swift&lt;/code> , then comple
 &lt;h2 id="checking-the-size">Checking the Size
 &lt;/h2>&lt;p>Before actually reducing the size, we need to first look at what the current size is, to facilitate later comparison of before and after sizes.&lt;/p>
 &lt;p>There are multiple ways to check the size, here are a few recommendations (for Linux and MacOS), you can use any one of them.&lt;/p>
-&lt;h4 id="ls">ls
-&lt;/h4>&lt;p>You can use &lt;code>ls -l&lt;/code> or &lt;code>ll&lt;/code>:&lt;/p>
+&lt;h3 id="ls">ls
+&lt;/h3>&lt;p>You can use &lt;code>ls -l&lt;/code> or &lt;code>ll&lt;/code>:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -123,8 +134,8 @@ Create a new file named &lt;code>Models/CustomFont.swift&lt;/code> , then comple
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">-rw-r--r-- &lt;span class="m">1&lt;/span> hunter staff 23K Jul &lt;span class="m">20&lt;/span> 21:52 pkg/hello_wasm_bg.wasm
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h4 id="stat">stat
-&lt;/h4>&lt;div class="highlight">&lt;div class="chroma">
+&lt;/div>&lt;h3 id="stat">stat
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
 &lt;/span>&lt;span class="lnt">2
@@ -134,8 +145,8 @@ Create a new file named &lt;code>Models/CustomFont.swift&lt;/code> , then comple
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="m">16777222&lt;/span> &lt;span class="m">142141572&lt;/span> -rw-r--r-- &lt;span class="m">1&lt;/span> hunter staff &lt;span class="m">0&lt;/span> &lt;span class="m">23347&lt;/span> &lt;span class="s2">&amp;#34;Jul 20 21:52:53 2023&amp;#34;&lt;/span> &lt;span class="s2">&amp;#34;Jul 20 21:52:01 2023&amp;#34;&lt;/span> &lt;span class="s2">&amp;#34;Jul 20 21:52:01 2023&amp;#34;&lt;/span> &lt;span class="s2">&amp;#34;Jul 20 21:52:01 2023&amp;#34;&lt;/span> &lt;span class="m">4096&lt;/span> &lt;span class="m">48&lt;/span> &lt;span class="m">0&lt;/span> pkg/hello_wasm_bg.wasm
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h4 id="wc">wc
-&lt;/h4>&lt;div class="highlight">&lt;div class="chroma">
+&lt;/div>&lt;h3 id="wc">wc
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
 &lt;/span>&lt;span class="lnt">2
@@ -146,12 +157,12 @@ Create a new file named &lt;code>Models/CustomFont.swift&lt;/code> , then comple
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Using &lt;code>wc&lt;/code> as an example, the current wasm file size is &lt;strong>23347b&lt;/strong>.&lt;/p>
-&lt;h2 id="iv-code-level">IV. Code Level
+&lt;h2 id="code-level">Code Level
 &lt;/h2>&lt;blockquote>
 &lt;p>Link-Time Optimization (LTO) refers to a type of interprocedural optimization performed during program linking. It allows the compiler to optimize across multiple compilation units during the linking phase, thereby improving the program&amp;rsquo;s performance, reliability, and security.&lt;/p>
 &lt;/blockquote>
 &lt;p>Optimization at the code level mainly utilizes LTO (Link-Time Optimization).&lt;/p>
-&lt;h3 id="1-within-the-code">1. Within the Code
+&lt;h3 id="within-the-code">Within the Code
 &lt;/h3>&lt;p>Enable LTO in &lt;code>Cargo.toml&lt;/code>:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -195,7 +206,7 @@ Create a new file named &lt;code>Models/CustomFont.swift&lt;/code> , then comple
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>It&amp;rsquo;s clearly reduced in size! However, using the &lt;code>z&lt;/code> level doesn&amp;rsquo;t necessarily mean that the size will always be smaller than &lt;code>s&lt;/code>, sometimes &lt;code>s&lt;/code> can also be smaller than &lt;code>z&lt;/code>, this needs to be determined based on the code situation.&lt;/p>
-&lt;h3 id="2-outside-the-code">2. Outside the Code
+&lt;h3 id="outside-the-code">Outside the Code
 &lt;/h3>&lt;p>Outside the code, you can use &lt;a class="link" href="https://github.com/WebAssembly/binaryen" target="_blank" rel="noopener"
 >wasm-opt&lt;/a> for optimization. It can perform various optimizations on WebAssembly modules, of course, this article focuses on size aspects (digging a pit, we&amp;rsquo;ll discuss in detail later /dog head). And wasm-opt can optimize all wasm files that conform to the WebAssembly specification, so even if you didn&amp;rsquo;t write it in Rust, you can still use it for optimization. (Think about the wasm I used to write in Go, there&amp;rsquo;s also one more way to optimize it&amp;hellip;&amp;hellip;)&lt;/p>
 &lt;p>First, let&amp;rsquo;s look at the basic optimization parameters of wasm-opt:&lt;/p>
@@ -245,7 +256,7 @@ Create a new file named &lt;code>Models/CustomFont.swift&lt;/code> , then comple
 &lt;/ul>
 &lt;p>Among them, gzip also has the highest compression rate, so here we&amp;rsquo;ll take gzip as an example.&lt;/p>
 &lt;p>At the network level, compress the wasm file with gzip to reduce its size during transmission. Although it reduces the size during transmission, the browser needs to consume some performance to decrypt the compressed data when it receives it.&lt;/p>
-&lt;h3 id="1-enabling-gzip">1. Enabling GZIP
+&lt;h3 id="enabling-gzip">Enabling GZIP
 &lt;/h3>&lt;p>Enabling GZIP is actually simple, you just need to agree with the frontend and backend to both use gzip.&lt;/p>
 &lt;p>First, when the frontend requests the wasm file, it needs to put the compression modes supported by the browser in the request header:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -268,7 +279,7 @@ Create a new file named &lt;code>Models/CustomFont.swift&lt;/code> , then comple
 &lt;/div>
 &lt;/div>&lt;p>This enables GZIP.&lt;/p>
 &lt;p>Then, the browser receives the response body and header, knows that the backend uses gzip compression, so the browser will automatically use gzip to decompress and get the complete data.&lt;/p>
-&lt;h3 id="2-server-support">2. Server Support
+&lt;h3 id="server-support">Server Support
 &lt;/h3>&lt;p>You might wonder, the browser can automatically decrypt, but how does the server automatically encrypt? Does the backend need to write code to encrypt the file?&lt;/p>
 &lt;p>Of course not, just let the http server complete this operation. Here we&amp;rsquo;ll take the familiar Nginx as an example.&lt;/p>
 &lt;p>The simplest is to enable gzip with one line of configuration:&lt;/p>
@@ -302,7 +313,7 @@ Create a new file named &lt;code>Models/CustomFont.swift&lt;/code> , then comple
 &lt;/h2>&lt;p>You might be surprised, what physical level?!&lt;/p>
 &lt;p>That&amp;rsquo;s right, it&amp;rsquo;s really at the physical level - directly perform gzip physical compression on the wasm file! Haha, this method is really amazing, I discovered it when I was looking for ways to reduce size while developing wasm with Go. If you&amp;rsquo;ve optimized your wasm to the end of the road, you might as well boldly try this solution. 😆&lt;/p>
 &lt;p>Remember in the &amp;ldquo;Network Level&amp;rdquo; section above, there was a question about whether manual compression is needed, well, here it&amp;rsquo;s manual compression and decompression all the way, haha.&lt;/p>
-&lt;h3 id="1-physical-compression">1. Physical Compression
+&lt;h3 id="physical-compression">Physical Compression
 &lt;/h3>&lt;p>First, perform physical gzip compression on the wasm file, here we&amp;rsquo;ll use the original wasm (23347b):&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -337,7 +348,7 @@ Create a new file named &lt;code>Models/CustomFont.swift&lt;/code> , then comple
 &lt;/div>
 &lt;/div>&lt;p>The effect is even more excellent, reduced from 19871b to 9237b!&lt;/p>
 &lt;p>So, here we physically compress and store the wasm file, and when the browser requests, it directly requests the &lt;code>.gz&lt;/code> file.&lt;/p>
-&lt;h3 id="2-physical-decompression">2. Physical Decompression
+&lt;h3 id="physical-decompression">Physical Decompression
 &lt;/h3>&lt;p>After the browser gets the &lt;code>.gz&lt;/code> file, it needs to physically decompress it.&lt;/p>
 &lt;p>Here we recommend using the frontend library &lt;code>pako&lt;/code> to decompress the &lt;code>.gz&lt;/code> file:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -388,7 +399,7 @@ Create a new file named &lt;code>Models/CustomFont.swift&lt;/code> , then comple
 &lt;li>wasm-bindgen 0.2.87&lt;/li>
 &lt;/ul>
 &lt;h2 id="mutual-function-calls">Mutual Function Calls
-&lt;/h2>&lt;h3 id="1-js-calling-rust-functions">1. JS Calling Rust Functions
+&lt;/h2>&lt;h3 id="js-calling-rust-functions">JS Calling Rust Functions
 &lt;/h3>&lt;p>Actually, in the first article of this series, we used JS calling Rust functions as an example for demonstration. Here we&amp;rsquo;ll still use this as an example, mainly to discuss the key points.&lt;/p>
 &lt;p>First, declare a Rust function:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -454,15 +465,15 @@ Create a new file named &lt;code>Models/CustomFont.swift&lt;/code> , then comple
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Finally, start the http server, and you can see &lt;code>the result from rust is: 3&lt;/code> in the browser&amp;rsquo;s console, indicating a successful call!&lt;/p>
-&lt;h3 id="2-rust-calling-js-functions">2. Rust Calling JS Functions
-&lt;/h3>&lt;h4 id="21-specifying-js-objects">2.1 Specifying JS Objects
+&lt;h3 id="rust-calling-js-functions">Rust Calling JS Functions
+&lt;/h3>&lt;h4 id="specifying-js-objects">Specifying JS Objects
 &lt;/h4>&lt;p>When calling JS functions in Rust, you need to specify JS objects, which means you need to explicitly tell Rust where this JS function is taken from JS to use.&lt;/p>
 &lt;p>It mainly involves the following two ways:&lt;/p>
 &lt;ul>
 &lt;li>&lt;em>&lt;strong>js_namespace&lt;/strong>&lt;/em>: This is an optional attribute used to specify a JavaScript namespace that contains functions to be exported in the wasm module. If &lt;code>js_namespace&lt;/code> is not specified, all exported functions will be placed in the global namespace.&lt;/li>
 &lt;li>&lt;em>&lt;strong>js_name&lt;/strong>&lt;/em>: This is another optional attribute used to specify the function name in JavaScript. If &lt;code>js_name&lt;/code> is not specified, the exported function name will be the same as the function name in Rust.&lt;/li>
 &lt;/ul>
-&lt;h4 id="22-js-native-functions">2.2 JS Native Functions
+&lt;h4 id="js-native-functions">JS Native Functions
 &lt;/h4>&lt;p>For some JS native functions, in Rust, you need to look for alternative solutions. For example, the &lt;code>console.log()&lt;/code> function we talked about in the previous article, isn&amp;rsquo;t it a bit troublesome!&lt;/p>
 &lt;p>So, do you want to directly call JS native functions in Rust?!&lt;/p>
 &lt;p>Here, let&amp;rsquo;s take the &lt;code>console.log()&lt;/code> function as an example, directly import and call it in Rust, avoiding the trouble of alternative solutions.&lt;/p>
@@ -608,7 +619,7 @@ Create a new file named &lt;code>Models/CustomFont.swift&lt;/code> , then comple
 &lt;/div>&lt;p>Here, a new function &lt;code>log_str&lt;/code> is defined, but it specifies &lt;code>js_namespace = console&lt;/code> and &lt;code>js_name = log&lt;/code>, so here, a custom function name can be used.&lt;/p>
 &lt;p>After directly compiling, look at the console, you can see the normal output: &lt;code>hello, javascript!&lt;/code>.&lt;/p>
 &lt;p>To summarize, if &lt;code>js_name&lt;/code> is not specified, the Rust function name will be used as the JS function name.&lt;/p>
-&lt;h4 id="23-custom-js-functions">2.3 Custom JS Functions
+&lt;h4 id="custom-js-functions">Custom JS Functions
 &lt;/h4>&lt;p>In certain scenarios, you need to use Rust to call JS functions, such as scenarios that are more advantageous for JS - use JS to manipulate DOM, use Rust to calculate.&lt;/p>
 &lt;p>First, create a file &lt;code>index.js&lt;/code>, write a function:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -718,7 +729,7 @@ Create a new file named &lt;code>Models/CustomFont.swift&lt;/code> , then comple
 &lt;li>The JS function must be exported, otherwise it cannot be called;&lt;/li>
 &lt;li>&lt;code>raw_module&lt;/code> can only be used to specify relative paths, and, as you can notice in the browser&amp;rsquo;s console, the &lt;code>../&lt;/code> relative path here is actually the relative path in terms of the wasm file, this must be noted!&lt;/li>
 &lt;/ol>
-&lt;h2 id="iv-js-calling-rusts-struct">IV. JS Calling Rust&amp;rsquo;s struct
+&lt;h2 id="js-calling-rusts-struct">JS Calling Rust&amp;rsquo;s struct
 &lt;/h2>&lt;p>Now, for something mind-blowing, JS calling Rust&amp;rsquo;s struct?!&lt;/p>
 &lt;p>JS doesn&amp;rsquo;t even have structs, what will this exported thing look like, and how will it be called in JS?!&lt;/p>
 &lt;p>First, define a struct, and declare several methods:&lt;/p>
@@ -820,7 +831,7 @@ Create a new file named &lt;code>Models/CustomFont.swift&lt;/code> , then comple
 &lt;p>After compiling, open the browser, you can see the output in the console: &lt;code>name is : HunterJi, age is : 21&lt;/code>.&lt;/p>
 &lt;p>Actually, you might be very curious, at least I was very curious, what exactly is Rust&amp;rsquo;s struct in JS?&lt;/p>
 &lt;p>Here, directly add a &lt;code>console.log(user)&lt;/code>, and you can see in the output. So what exactly is it in JS? Please print it out and see for yourself! :P&lt;/p>
-&lt;h2 id="v-conclusion">V. Conclusion
+&lt;h2 id="conclusion">Conclusion
 &lt;/h2>&lt;p>In this article, we mainly discussed the interaction between Rust and JS, reflected in the mutual calls between Rust and JS, which is based on the type conversion in &lt;a class="link" href="https://hunterji.com/blog/getting-fancy-with-rust-and-webAssembly-2" target="_blank" rel="noopener"
 >the previous article&lt;/a>.&lt;/p>
 &lt;p>The learning cost of mutual function calls between Rust and JS is still relatively high, and compared to writing wasm with Go, Rust&amp;rsquo;s granularity is very fine, almost can be said to be at will.&lt;/p>
@@ -836,7 +847,7 @@ Create a new file named &lt;code>Models/CustomFont.swift&lt;/code> , then comple
 &lt;li>web-sys 0.3.64&lt;/li>
 &lt;/ul>
 &lt;h2 id="dom">DOM
-&lt;/h2>&lt;h3 id="1-configuring-dependencies">1. Configuring Dependencies
+&lt;/h2>&lt;h3 id="configuring-dependencies">Configuring Dependencies
 &lt;/h3>&lt;p>To manipulate the DOM, we need to introduce a new dependency &lt;code>web-sys&lt;/code>. Therefore, you can configure the dependencies in &lt;code>Cargo.toml&lt;/code> as follows:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -851,7 +862,7 @@ Create a new file named &lt;code>Models/CustomFont.swift&lt;/code> , then comple
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>You might be curious about what this &lt;code>features&lt;/code> is. To be honest, I was very curious at first and didn&amp;rsquo;t see any special explanation. I found out through trial and error that you need to manually import feature dependencies&amp;hellip; For example, if you need to use JS&amp;rsquo;s &lt;code>console&lt;/code> in Rust, you need to add &lt;code>console&lt;/code> to &lt;code>features&lt;/code>.&lt;/p>
-&lt;h3 id="2-getting-the-document">2. Getting the Document
+&lt;h3 id="getting-the-document">Getting the Document
 &lt;/h3>&lt;p>To use &lt;code>Document&lt;/code> in Rust, we need to add &lt;code>features&lt;/code> as explained in the previous step. There&amp;rsquo;s a dependency relationship here: first, we need to get the &lt;code>window&lt;/code> in Rust, and then get the &lt;code>document&lt;/code>.&lt;/p>
 &lt;p>Therefore, after adding &lt;code>features&lt;/code>, it looks like this:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -884,7 +895,7 @@ Create a new file named &lt;code>Models/CustomFont.swift&lt;/code> , then comple
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Now we have unlocked &lt;code>document&lt;/code> in Rust, so we can do whatever we want in the frontend!&lt;/p>
-&lt;h3 id="3-manipulating-elements">3. Manipulating Elements
+&lt;h3 id="manipulating-elements">Manipulating Elements
 &lt;/h3>&lt;p>Let&amp;rsquo;s start manipulating. First, we need to get the &lt;code>Element&lt;/code>&amp;hellip;&amp;hellip;&lt;/p>
 &lt;p>Yes, you guessed it right, let&amp;rsquo;s continue to add &lt;code>features&lt;/code>. Here we need to add an &lt;code>Element&lt;/code>:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -930,7 +941,7 @@ Create a new file named &lt;code>Models/CustomFont.swift&lt;/code> , then comple
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h3 id="4-compilation">4. Compilation
+&lt;/div>&lt;h3 id="compilation">Compilation
 &lt;/h3>&lt;p>Compile the completed Rust project into wasm:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -940,7 +951,7 @@ Create a new file named &lt;code>Models/CustomFont.swift&lt;/code> , then comple
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">wasm-pack build --target web
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h3 id="5-calling-in-html">5. Calling in HTML
+&lt;/div>&lt;h3 id="calling-in-html">Calling in HTML
 &lt;/h3>&lt;p>Based on the HTML from the project in the previous article, add a &lt;code>div&lt;/code> here with id &lt;code>message&lt;/code>, and add a call to the wasm &lt;code>update_message&lt;/code> function. The code is as follows:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -978,16 +989,16 @@ Create a new file named &lt;code>Models/CustomFont.swift&lt;/code> , then comple
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">script&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h3 id="6-verification-in-browser">6. Verification in Browser
+&lt;/div>&lt;h3 id="verification-in-browser">Verification in Browser
 &lt;/h3>&lt;p>Start an HTTP server, then view it in the browser. You can see an &lt;code>h1&lt;/code> tag with &lt;code>Hello, Rust!&lt;/code> appearing on the page.&lt;/p>
-&lt;h3 id="7-discovering-more-methods">7. Discovering More Methods
+&lt;h3 id="discovering-more-methods">Discovering More Methods
 &lt;/h3>&lt;p>As you write according to the article, you might notice a problem - why aren&amp;rsquo;t these methods auto-completing?!&lt;/p>
 &lt;p>Yes, that&amp;rsquo;s right, (at least I found that) currently &lt;code>web-sys&lt;/code> doesn&amp;rsquo;t have auto-completion, so we can only develop by combining developers&amp;rsquo; excellent frontend skills and the rich &lt;a class="link" href="https://rustwasm.github.io/wasm-bindgen/api/web_sys/" target="_blank" rel="noopener"
 >official documentation&lt;/a>.&lt;/p>
 &lt;h2 id="type-conversion-between-rust-and-js">Type Conversion Between Rust and JS
 &lt;/h2>&lt;p>For wasm, performance is certainly improved, but type conversion has always been an issue. When a large amount of data needs to be type-converted in wasm/js, it&amp;rsquo;s really a disaster for performance. I encountered this problem when developing wasm with Go before, where I needed to use official methods for manual type conversion, but wasm was dealing with a very large amount of data&amp;hellip;&amp;hellip;&lt;/p>
 &lt;p>Fortunately, Rust&amp;rsquo;s type support is really rich!&lt;/p>
-&lt;h3 id="1-basic-types">1. Basic Types
+&lt;h3 id="basic-types">Basic Types
 &lt;/h3>&lt;p>Basic types are quite simple, and Rust&amp;rsquo;s generics also support many types well. Here&amp;rsquo;s a mapping table of basic types:&lt;/p>
 &lt;table>
 &lt;thead>
@@ -1054,8 +1065,8 @@ Create a new file named &lt;code>Models/CustomFont.swift&lt;/code> , then comple
 &lt;td>string&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&amp;amp;[T] 例如：&amp;amp;[u8]&lt;/td>
-&lt;td>[T] 例如：Uint8Array&lt;/td>
+&lt;td>&amp;amp;[T] For example：&amp;amp;[u8]&lt;/td>
+&lt;td>[T] For example：Uint8Array&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Vec&amp;lt;T&amp;gt;&lt;/td>
@@ -1063,7 +1074,7 @@ Create a new file named &lt;code>Models/CustomFont.swift&lt;/code> , then comple
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h3 id="2-basic-type-conversion-example">2. Basic Type Conversion Example
+&lt;h3 id="basic-type-conversion-example">Basic Type Conversion Example
 &lt;/h3>&lt;p>In the &lt;code>lib.rs&lt;/code> file, create a function that takes a few types as parameters, then reads and prints them:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -1249,7 +1260,7 @@ Create a new file named &lt;code>Models/CustomFont.swift&lt;/code> , then comple
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">js number array item: 50
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h3 id="3-generic-type">3. Generic Type
+&lt;/div>&lt;h3 id="generic-type">Generic Type
 &lt;/h3>&lt;p>Rust provides a generic type - JsValue, which can be used as any JS type.&lt;/p>
 &lt;p>Here&amp;rsquo;s a simple example, setting up a function that takes &lt;code>JsValue&lt;/code> as a parameter and prints it.&lt;/p>
 &lt;p>Create the function:&lt;/p>
@@ -1338,10 +1349,10 @@ Create a new file named &lt;code>Models/CustomFont.swift&lt;/code> , then comple
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">JsValue([30, 40, 50])
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h3 id="4-result">4. Result
+&lt;/div>&lt;h3 id="result">Result
 &lt;/h3>&lt;p>&lt;code>Result&lt;/code> is a very important existence in Rust. If you often write Rust, you don&amp;rsquo;t want to change your development habits when writing WebAssembly.&lt;/p>
 &lt;p>For JS, &lt;code>Result&lt;/code> can be directly caught in &lt;code>catch&lt;/code>, but here we need to define the parameter types well.&lt;/p>
-&lt;h4 id="41-using-result-to-return-errors">4.1 Using Result to Return Errors
+&lt;h4 id="using-result-to-return-errors">Using Result to Return Errors
 &lt;/h4>&lt;p>First, let&amp;rsquo;s look at a scenario that only returns errors:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -1431,7 +1442,7 @@ Create a new file named &lt;code>Models/CustomFont.swift&lt;/code> , then comple
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">100 is ok
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h4 id="42-using-result-to-return-normal-values-and-errors">4.2 Using Result to Return Normal Values and Errors
+&lt;/div>&lt;h4 id="using-result-to-return-normal-values-and-errors">Using Result to Return Normal Values and Errors
 &lt;/h4>&lt;p>So, what if you want to return both normal values and errors? Rust returning a &lt;code>Result&lt;/code> is no problem, but how does JS parse it?&lt;/p>
 &lt;p>Let&amp;rsquo;s go straight to the Rust code:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -1523,10 +1534,10 @@ Create a new file named &lt;code>Models/CustomFont.swift&lt;/code> , then comple
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">get 110
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h3 id="5-directly-importing-js-types">5. Directly Importing JS Types
+&lt;/div>&lt;h3 id="directly-importing-js-types">Directly Importing JS Types
 &lt;/h3>&lt;p>If you want to be more direct, you can directly import JS types! This mainly uses the &lt;code>js-sys&lt;/code> dependency, you can see many JS types and functions on the &lt;a class="link" href="https://docs.rs/js-sys/latest/js_sys/" target="_blank" rel="noopener"
 >official documentation&lt;/a>, just import them directly to use. Of course, in certain scenarios, directly imported types need to be manually converted.&lt;/p>
-&lt;h4 id="51-configuring-dependencies">5.1 Configuring Dependencies
+&lt;h4 id="configuring-dependencies-1">Configuring Dependencies
 &lt;/h4>&lt;p>Add the &lt;code>js-sys&lt;/code> dependency in &lt;code>Cargo.toml&lt;/code>:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -1542,7 +1553,7 @@ Create a new file named &lt;code>Models/CustomFont.swift&lt;/code> , then comple
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">js-sys&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;0.3.61&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h4 id="52-uint8array">5.2 Uint8Array
+&lt;/div>&lt;h4 id="uint8array">Uint8Array
 &lt;/h4>&lt;p>First, take &lt;code>Uint8Array&lt;/code> as an example, import the type at the top of &lt;code>lib.rs&lt;/code>:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -1616,7 +1627,7 @@ Create a new file named &lt;code>Models/CustomFont.swift&lt;/code> , then comple
 &lt;/blockquote>
 &lt;p>You can see in the code that the directly imported &lt;code>Uint8Array&lt;/code> has its own methods. In certain scenarios, type conversion is needed, but it&amp;rsquo;s best to avoid type conversion and directly use its own methods.&lt;/p>
 &lt;p>We can briefly summarize here that it&amp;rsquo;s best to use directly imported JS types entirely within certain scenarios, or use Rust types to replace JS types entirely. When both exist, manually converting types is a terrible thing.&lt;/p>
-&lt;h4 id="53-date">5.3 Date
+&lt;h4 id="date">Date
 &lt;/h4>&lt;p>The &lt;code>Date&lt;/code> type wasn&amp;rsquo;t mentioned in the above sections. Here we can directly import and use the JS &lt;code>Date&lt;/code> type.&lt;/p>
 &lt;p>First, import the type:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -1798,8 +1809,8 @@ Create a new file named &lt;code>Models/CustomFont.swift&lt;/code> , then comple
 &lt;/div>&lt;p>Although there are many files, we can see the wasm file we need, and based on Go&amp;rsquo;s wasm import method, we might need to use the js file here.&lt;/p>
 &lt;h2 id="frontend-integration">Frontend Integration
 &lt;/h2>&lt;p>To quickly verify, let&amp;rsquo;s create an &lt;code>index.html&lt;/code> file directly in the &lt;code>hello-wasm&lt;/code> project for frontend integration.&lt;/p>
-&lt;h4 id="1-create-indexhtml">1. Create index.html
-&lt;/h4>&lt;p>First, create an &lt;code>index.html&lt;/code> file:&lt;/p>
+&lt;h3 id="create-indexhtml">Create index.html
+&lt;/h3>&lt;p>First, create an &lt;code>index.html&lt;/code> file:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
@@ -1835,8 +1846,8 @@ Create a new file named &lt;code>Models/CustomFont.swift&lt;/code> , then comple
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Yes, that&amp;rsquo;s right! This is a standard opening! 😼&lt;/p>
-&lt;h4 id="2-import-wasm">2. Import WASM
-&lt;/h4>&lt;p>Unlike Go&amp;rsquo;s wasm import method, Rust prefers to directly import the js file rather than having developers manually import the wasm file.&lt;/p>
+&lt;h3 id="import-wasm">Import WASM
+&lt;/h3>&lt;p>Unlike Go&amp;rsquo;s wasm import method, Rust prefers to directly import the js file rather than having developers manually import the wasm file.&lt;/p>
 &lt;p>Here we use js import:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -1866,8 +1877,8 @@ Create a new file named &lt;code>Models/CustomFont.swift&lt;/code> , then comple
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">script&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h4 id="3-complete-code">3. Complete Code
-&lt;/h4>&lt;p>The complete HTML code is as follows:&lt;/p>
+&lt;/div>&lt;h3 id="complete-code">Complete Code
+&lt;/h3>&lt;p>The complete HTML code is as follows:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
@@ -1943,8 +1954,8 @@ loading="lazy"
 alt="rust_wasm"
 >&lt;/p>
 &lt;h2 id="common-issues">Common Issues
-&lt;/h2>&lt;h4 id="1-frontend-reports-response-type-error">1. Frontend Reports Response Type Error
-&lt;/h4>&lt;p>The detailed error is as follows:&lt;/p>
+&lt;/h2>&lt;h3 id="frontend-reports-response-type-error">Frontend Reports Response Type Error
+&lt;/h3>&lt;p>The detailed error is as follows:&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -1965,8 +1976,8 @@ alt="rust_wasm"
 &lt;li>&lt;strong>deno&lt;/strong>: Compile into a deno module that can be loaded via import&lt;/li>
 &lt;li>&lt;strong>no-modules&lt;/strong>: Similar to web, but older and cannot use ES modules&lt;/li>
 &lt;/ul>
-&lt;h4 id="2-directly-importing-the-wasm-file">2. Directly Importing the WASM File
-&lt;/h4>&lt;p>If you try to directly import the wasm file instead of using the method described in this article, you&amp;rsquo;ll find that it works too!&lt;/p>
+&lt;h3 id="directly-importing-the-wasm-file">Directly Importing the WASM File
+&lt;/h3>&lt;p>If you try to directly import the wasm file instead of using the method described in this article, you&amp;rsquo;ll find that it works too!&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -1984,7 +1995,7 @@ alt="rust_wasm"
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Yes, that&amp;rsquo;s right, it works for now, but when you introduce other things like DOM manipulation, it starts to break&amp;hellip;&lt;/p>
-&lt;h4 id="3-updated-wasm-import-method">3. Updated WASM Import Method
-&lt;/h4>&lt;p>Regarding the previous issue, let&amp;rsquo;s not discuss whether we can directly import the wasm file. Here, I&amp;rsquo;ll just mention the &lt;code>instantiateStreaming&lt;/code> method. This is an updated method that doesn&amp;rsquo;t require conversion to &lt;code>arrayBuffer&lt;/code>, which I discovered while exploring Rust projects. If you&amp;rsquo;re importing wasm in other languages, please use this &lt;a class="link" href="https://developer.mozilla.org/en-US/docs/WebAssembly/JavaScript_interface/instantiateStreaming" target="_blank" rel="noopener"
+&lt;h3 id="updated-wasm-import-method">Updated WASM Import Method
+&lt;/h3>&lt;p>Regarding the previous issue, let&amp;rsquo;s not discuss whether we can directly import the wasm file. Here, I&amp;rsquo;ll just mention the &lt;code>instantiateStreaming&lt;/code> method. This is an updated method that doesn&amp;rsquo;t require conversion to &lt;code>arrayBuffer&lt;/code>, which I discovered while exploring Rust projects. If you&amp;rsquo;re importing wasm in other languages, please use this &lt;a class="link" href="https://developer.mozilla.org/en-US/docs/WebAssembly/JavaScript_interface/instantiateStreaming" target="_blank" rel="noopener"
 >updated method&lt;/a>.&lt;/p></description></item><item><title>About Me</title><link>https://hunterji.com/about/</link><pubDate>Sun, 06 Mar 2022 00:00:00 +0000</pubDate><guid>https://hunterji.com/about/</guid><description>&lt;p>👋 Hi, I&amp;rsquo;m Hunter Ji, an experienced Full Stack Engineer, Independent Developer, and aspiring Designer. I&amp;rsquo;m passionate about creating user-friendly and innovative applications that merge technical excellence with thoughtful design principles. Currently, I&amp;rsquo;m exploring UI/UX design while continuing to develop solutions that effectively assist others.&lt;/p>
 &lt;p>I regularly share my design work and technical insights, as I believe in the power of knowledge sharing and continuous learning. I have a deep love for the intersection of technology and design, and I&amp;rsquo;m always open to connecting with like-minded individuals who share similar interests.&lt;/p></description></item><item><title>Archives</title><link>https://hunterji.com/archives/</link><pubDate>Sun, 06 Mar 2022 00:00:00 +0000</pubDate><guid>https://hunterji.com/archives/</guid><description/></item><item><title>My Products</title><link>https://hunterji.com/products/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://hunterji.com/products/</guid><description/></item><item><title>Search</title><link>https://hunterji.com/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://hunterji.com/search/</guid><description/></item></channel></rss>

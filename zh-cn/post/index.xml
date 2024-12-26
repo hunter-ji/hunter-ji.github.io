@@ -1,4 +1,122 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 小橙</title><link>https://hunterji.com/zh-cn/post/</link><description>Recent content in Posts on 小橙</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 07 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://hunterji.com/zh-cn/post/index.xml" rel="self" type="application/rss+xml"/><item><title>给Folder Slice重新设计一个图标</title><link>https://hunterji.com/zh-cn/post/%E7%BB%99folder-slice%E9%87%8D%E6%96%B0%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%9B%BE%E6%A0%87/</link><pubDate>Sat, 07 Dec 2024 00:00:00 +0000</pubDate><guid>https://hunterji.com/zh-cn/post/%E7%BB%99folder-slice%E9%87%8D%E6%96%B0%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%9B%BE%E6%A0%87/</guid><description>&lt;p>给&lt;a class="link" href="https://folderslice.com" target="_blank" rel="noopener"
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 小橙</title><link>https://hunterji.com/zh-cn/post/</link><description>Recent content in Posts on 小橙</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 26 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://hunterji.com/zh-cn/post/index.xml" rel="self" type="application/rss+xml"/><item><title>搞定！一键本地免费自动生成中文字幕，不仅自动校验，还能生成FCPXML</title><link>https://hunterji.com/zh-cn/post/%E6%90%9E%E5%AE%9A%E4%B8%80%E9%94%AE%E6%9C%AC%E5%9C%B0%E5%85%8D%E8%B4%B9%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95%E4%B8%8D%E4%BB%85%E8%87%AA%E5%8A%A8%E6%A0%A1%E9%AA%8C%E8%BF%98%E8%83%BD%E7%94%9F%E6%88%90fcpxml/</link><pubDate>Thu, 26 Dec 2024 00:00:00 +0000</pubDate><guid>https://hunterji.com/zh-cn/post/%E6%90%9E%E5%AE%9A%E4%B8%80%E9%94%AE%E6%9C%AC%E5%9C%B0%E5%85%8D%E8%B4%B9%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95%E4%B8%8D%E4%BB%85%E8%87%AA%E5%8A%A8%E6%A0%A1%E9%AA%8C%E8%BF%98%E8%83%BD%E7%94%9F%E6%88%90fcpxml/</guid><description>&lt;img src="https://hunterji.com/zh-cn/post/%E6%90%9E%E5%AE%9A%E4%B8%80%E9%94%AE%E6%9C%AC%E5%9C%B0%E5%85%8D%E8%B4%B9%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95%E4%B8%8D%E4%BB%85%E8%87%AA%E5%8A%A8%E6%A0%A1%E9%AA%8C%E8%BF%98%E8%83%BD%E7%94%9F%E6%88%90fcpxml/cover.jpeg" alt="Featured image of post 搞定！一键本地免费自动生成中文字幕，不仅自动校验，还能生成FCPXML" />&lt;h2 id="前言">前言
+&lt;/h2>&lt;p>继上次跟大家分享 我的本地自动生成中文字幕的流程后，我将这个流程更加自动化了。&lt;/p>
+&lt;p>之前的流程还有较多人工参与的环节。&lt;/p>
+&lt;p>但是现在，我只要导出音频，一键执行，就能直接得到带样式的FCPXML文件了！&lt;/p>
+&lt;p>我们一起来看看吧！&lt;/p>
+&lt;h2 id="实现效果">实现效果
+&lt;/h2>&lt;p>首先，我准备好导出的音频文件和稿子。&lt;/p>
+&lt;p>&lt;img src="https://hunterji.com/zh-cn/post/%E6%90%9E%E5%AE%9A%E4%B8%80%E9%94%AE%E6%9C%AC%E5%9C%B0%E5%85%8D%E8%B4%B9%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95%E4%B8%8D%E4%BB%85%E8%87%AA%E5%8A%A8%E6%A0%A1%E9%AA%8C%E8%BF%98%E8%83%BD%E7%94%9F%E6%88%90fcpxml/screenshot-0.jpeg"
+width="4096"
+height="2304"
+srcset="https://hunterji.com/zh-cn/post/%E6%90%9E%E5%AE%9A%E4%B8%80%E9%94%AE%E6%9C%AC%E5%9C%B0%E5%85%8D%E8%B4%B9%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95%E4%B8%8D%E4%BB%85%E8%87%AA%E5%8A%A8%E6%A0%A1%E9%AA%8C%E8%BF%98%E8%83%BD%E7%94%9F%E6%88%90fcpxml/screenshot-0_hu12777779007504187297.jpeg 480w, https://hunterji.com/zh-cn/post/%E6%90%9E%E5%AE%9A%E4%B8%80%E9%94%AE%E6%9C%AC%E5%9C%B0%E5%85%8D%E8%B4%B9%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95%E4%B8%8D%E4%BB%85%E8%87%AA%E5%8A%A8%E6%A0%A1%E9%AA%8C%E8%BF%98%E8%83%BD%E7%94%9F%E6%88%90fcpxml/screenshot-0_hu1990596875922662242.jpeg 1024w"
+loading="lazy"
+alt="screenshot 0"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+>&lt;/p>
+&lt;p>然后，启动！&lt;/p>
+&lt;p>&lt;img src="https://hunterji.com/zh-cn/post/%E6%90%9E%E5%AE%9A%E4%B8%80%E9%94%AE%E6%9C%AC%E5%9C%B0%E5%85%8D%E8%B4%B9%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95%E4%B8%8D%E4%BB%85%E8%87%AA%E5%8A%A8%E6%A0%A1%E9%AA%8C%E8%BF%98%E8%83%BD%E7%94%9F%E6%88%90fcpxml/screenshot-1.jpeg"
+width="4096"
+height="2304"
+srcset="https://hunterji.com/zh-cn/post/%E6%90%9E%E5%AE%9A%E4%B8%80%E9%94%AE%E6%9C%AC%E5%9C%B0%E5%85%8D%E8%B4%B9%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95%E4%B8%8D%E4%BB%85%E8%87%AA%E5%8A%A8%E6%A0%A1%E9%AA%8C%E8%BF%98%E8%83%BD%E7%94%9F%E6%88%90fcpxml/screenshot-1_hu3707819824170238715.jpeg 480w, https://hunterji.com/zh-cn/post/%E6%90%9E%E5%AE%9A%E4%B8%80%E9%94%AE%E6%9C%AC%E5%9C%B0%E5%85%8D%E8%B4%B9%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95%E4%B8%8D%E4%BB%85%E8%87%AA%E5%8A%A8%E6%A0%A1%E9%AA%8C%E8%BF%98%E8%83%BD%E7%94%9F%E6%88%90fcpxml/screenshot-1_hu9294492640866749246.jpeg 1024w"
+loading="lazy"
+alt="screenshot 1"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+>&lt;/p>
+&lt;p>可以看到，这中间经过了自动识别和生成中文字幕，利用本地的AI大模型结合我的稿子自动校验字幕，将校验后的srt字幕文件转成带样式的FCPXML字幕文件这几个步骤。&lt;/p>
+&lt;p>&lt;img src="https://hunterji.com/zh-cn/post/%E6%90%9E%E5%AE%9A%E4%B8%80%E9%94%AE%E6%9C%AC%E5%9C%B0%E5%85%8D%E8%B4%B9%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95%E4%B8%8D%E4%BB%85%E8%87%AA%E5%8A%A8%E6%A0%A1%E9%AA%8C%E8%BF%98%E8%83%BD%E7%94%9F%E6%88%90fcpxml/screenshot-2.jpeg"
+width="4096"
+height="2304"
+srcset="https://hunterji.com/zh-cn/post/%E6%90%9E%E5%AE%9A%E4%B8%80%E9%94%AE%E6%9C%AC%E5%9C%B0%E5%85%8D%E8%B4%B9%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95%E4%B8%8D%E4%BB%85%E8%87%AA%E5%8A%A8%E6%A0%A1%E9%AA%8C%E8%BF%98%E8%83%BD%E7%94%9F%E6%88%90fcpxml/screenshot-2_hu12949445246954089739.jpeg 480w, https://hunterji.com/zh-cn/post/%E6%90%9E%E5%AE%9A%E4%B8%80%E9%94%AE%E6%9C%AC%E5%9C%B0%E5%85%8D%E8%B4%B9%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95%E4%B8%8D%E4%BB%85%E8%87%AA%E5%8A%A8%E6%A0%A1%E9%AA%8C%E8%BF%98%E8%83%BD%E7%94%9F%E6%88%90fcpxml/screenshot-2_hu10957549263562610627.jpeg 1024w"
+loading="lazy"
+alt="screenshot 2"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+>&lt;/p>
+&lt;p>这样一键执行后，我直接导入生成的 FCPXML 字幕文件就行了！轻轻松松！&lt;/p>
+&lt;p>&lt;img src="https://hunterji.com/zh-cn/post/%E6%90%9E%E5%AE%9A%E4%B8%80%E9%94%AE%E6%9C%AC%E5%9C%B0%E5%85%8D%E8%B4%B9%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95%E4%B8%8D%E4%BB%85%E8%87%AA%E5%8A%A8%E6%A0%A1%E9%AA%8C%E8%BF%98%E8%83%BD%E7%94%9F%E6%88%90fcpxml/screenshot-3.jpeg"
+width="4096"
+height="2304"
+srcset="https://hunterji.com/zh-cn/post/%E6%90%9E%E5%AE%9A%E4%B8%80%E9%94%AE%E6%9C%AC%E5%9C%B0%E5%85%8D%E8%B4%B9%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95%E4%B8%8D%E4%BB%85%E8%87%AA%E5%8A%A8%E6%A0%A1%E9%AA%8C%E8%BF%98%E8%83%BD%E7%94%9F%E6%88%90fcpxml/screenshot-3_hu13499934657930779236.jpeg 480w, https://hunterji.com/zh-cn/post/%E6%90%9E%E5%AE%9A%E4%B8%80%E9%94%AE%E6%9C%AC%E5%9C%B0%E5%85%8D%E8%B4%B9%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95%E4%B8%8D%E4%BB%85%E8%87%AA%E5%8A%A8%E6%A0%A1%E9%AA%8C%E8%BF%98%E8%83%BD%E7%94%9F%E6%88%90fcpxml/screenshot-3_hu10983795583732307073.jpeg 1024w"
+loading="lazy"
+alt="screenshot 3"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+>&lt;/p>
+&lt;p>这里的 FCPXML 字幕文件的样式是我自己调的我喜欢的样式，然后在程序里使用，直接生成，导入字幕文件就可以用。&lt;/p>
+&lt;p>&lt;img src="https://hunterji.com/zh-cn/post/%E6%90%9E%E5%AE%9A%E4%B8%80%E9%94%AE%E6%9C%AC%E5%9C%B0%E5%85%8D%E8%B4%B9%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95%E4%B8%8D%E4%BB%85%E8%87%AA%E5%8A%A8%E6%A0%A1%E9%AA%8C%E8%BF%98%E8%83%BD%E7%94%9F%E6%88%90fcpxml/screenshot-4.jpeg"
+width="4096"
+height="2304"
+srcset="https://hunterji.com/zh-cn/post/%E6%90%9E%E5%AE%9A%E4%B8%80%E9%94%AE%E6%9C%AC%E5%9C%B0%E5%85%8D%E8%B4%B9%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95%E4%B8%8D%E4%BB%85%E8%87%AA%E5%8A%A8%E6%A0%A1%E9%AA%8C%E8%BF%98%E8%83%BD%E7%94%9F%E6%88%90fcpxml/screenshot-4_hu10368899196111050478.jpeg 480w, https://hunterji.com/zh-cn/post/%E6%90%9E%E5%AE%9A%E4%B8%80%E9%94%AE%E6%9C%AC%E5%9C%B0%E5%85%8D%E8%B4%B9%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95%E4%B8%8D%E4%BB%85%E8%87%AA%E5%8A%A8%E6%A0%A1%E9%AA%8C%E8%BF%98%E8%83%BD%E7%94%9F%E6%88%90fcpxml/screenshot-4_hu1735425167043766694.jpeg 1024w"
+loading="lazy"
+alt="screenshot 4"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+>&lt;/p>
+&lt;h2 id="仍需加强">仍需加强
+&lt;/h2>&lt;p>不过，现在还不够自动化。&lt;/p>
+&lt;p>每次录完视频，剪口播视频太麻烦了，所以我会继续完善这个自动化的工作流。&lt;/p>
+&lt;p>我希望能从自动剪口播视频开始，直接得到一个剪辑后的口播视频，和FCPXML文件。&lt;/p>
+&lt;p>我后续会将这套流程开发成一个App，免费分享给大家使用！最好是开箱即用。&lt;/p>
+&lt;p>感兴趣的小伙伴儿可以关注我，一起来让工作效率起飞吧！&lt;/p>
+&lt;h2 id="小插曲">小插曲
+&lt;/h2>&lt;p>这里有一个小插曲。&lt;/p>
+&lt;p>我上次分享流程的时候，有些小伙伴儿跟我提到需要将SRT转成FCPXML。&lt;/p>
+&lt;p>我就想到，直接右键转换是不是会很方便。&lt;/p>
+&lt;p>所以，我就在我的APP“&lt;a class="link" href="https://folderslice.com" target="_blank" rel="noopener"
+>文件夹夹&lt;/a>”中，加入了这个功能。在srt字幕文件的右键菜单，加入了一键生成FCPXML文件的功能，目前用的是我自己用的这个样式。&lt;/p>
+&lt;p>&lt;img src="https://hunterji.com/zh-cn/post/%E6%90%9E%E5%AE%9A%E4%B8%80%E9%94%AE%E6%9C%AC%E5%9C%B0%E5%85%8D%E8%B4%B9%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95%E4%B8%8D%E4%BB%85%E8%87%AA%E5%8A%A8%E6%A0%A1%E9%AA%8C%E8%BF%98%E8%83%BD%E7%94%9F%E6%88%90fcpxml/screenshot-5.jpeg"
+width="4096"
+height="2304"
+srcset="https://hunterji.com/zh-cn/post/%E6%90%9E%E5%AE%9A%E4%B8%80%E9%94%AE%E6%9C%AC%E5%9C%B0%E5%85%8D%E8%B4%B9%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95%E4%B8%8D%E4%BB%85%E8%87%AA%E5%8A%A8%E6%A0%A1%E9%AA%8C%E8%BF%98%E8%83%BD%E7%94%9F%E6%88%90fcpxml/screenshot-5_hu16265797043697047983.jpeg 480w, https://hunterji.com/zh-cn/post/%E6%90%9E%E5%AE%9A%E4%B8%80%E9%94%AE%E6%9C%AC%E5%9C%B0%E5%85%8D%E8%B4%B9%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95%E4%B8%8D%E4%BB%85%E8%87%AA%E5%8A%A8%E6%A0%A1%E9%AA%8C%E8%BF%98%E8%83%BD%E7%94%9F%E6%88%90fcpxml/screenshot-5_hu12121580824418714373.jpeg 1024w"
+loading="lazy"
+alt="文件夹夹"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+>&lt;/p>
+&lt;p>希望文件夹夹不仅能让你访问文件更加便捷，还能提供一些工具，让工作更高效！&lt;/p></description></item><item><title>Final Cut Pro如何实现中文字幕自动生成？</title><link>https://hunterji.com/zh-cn/post/final-cut-pro%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90/</link><pubDate>Thu, 12 Dec 2024 00:00:00 +0000</pubDate><guid>https://hunterji.com/zh-cn/post/final-cut-pro%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90/</guid><description>&lt;img src="https://hunterji.com/zh-cn/post/final-cut-pro%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90/cover.jpeg" alt="Featured image of post Final Cut Pro如何实现中文字幕自动生成？" />&lt;p>天呐，又要给视频加字幕了&amp;hellip;
+作为一个刚用 Final Cut Pro 的新手，我非常头疼的是：它居然不支持自动生成中文字幕！
+新出的字幕生成仅支持英文。剪映的生成字幕功能收费了。
+手打字幕，要花掉大把时间。
+难道没有更好的解决方案吗？&lt;/p>
+&lt;h2 id="探索过程">探索过程
+&lt;/h2>&lt;p>我开始疯狂搜索解决方案。
+市面上确实有不少中文字幕生成工具，看起来都挺诱人的。
+但仔细研究后，我却犹豫了：
+有的软件功能要么太过庞大，大大超出了我的需求，
+有的则需要一些额外的资源，
+并且mac上安装有点麻烦，等等一些原因让我有点劝退，并不是特别符合我的需求。&lt;/p>
+&lt;h2 id="转折点">转折点
+&lt;/h2>&lt;p>这些软件大都是用Whisper模型识别语音，有的还加入了AI校对和翻译功能。
+既然明白了原理，为什么不基于自己现有的条件，搭建一个适合自己的工作流程呢？&lt;/p>
+&lt;h2 id="我的解决方案">我的解决方案
+&lt;/h2>&lt;p>经过尝试，我找到了最适合自己的工作流：&lt;/p>
+&lt;ul>
+&lt;li>先把视频中的背景音乐静音，只导出人声&lt;/li>
+&lt;li>直接下载 Whisper 模型，用它识别语音，生成初版字幕。这时候生成的字幕比较粗糙，会有一些错别字之类的。&lt;/li>
+&lt;li>找一个ai平台，让 AI 基于我写的稿子帮我校对，特别是那些专业术语。&lt;/li>
+&lt;/ul>
+&lt;p>这里也可以使用一些网页的免费ai平台。
+将生成的字幕文件导入final cut pro，就可以轻松用上字幕了！
+不过，最好还是人工核对一下。
+其实这套流程下来，基本人工的工作量就非常少了。比如我这个生成的字幕，这里只需要调整一下这句字幕的时间轴。
+这样，我就可以轻松得到字幕啦～
+不仅省下了大把时间，字幕质量还很不错。&lt;/p>
+&lt;h2 id="一点小感悟">一点小感悟
+&lt;/h2>&lt;p>作为一个 Final Cut Pro 新手，我利用自己技术方面的强项来弥补我在剪辑方面的弱项，这让我不禁想尝试去打造一个属于自己的工作流程。
+与其被体力活儿困扰，不如主动迭代工作方式，让效率起飞！&lt;/p>
+&lt;h2 id="还能更简单吗">还能更简单吗？
+&lt;/h2>&lt;p>这个方案还有较多人工参与的因素，怎么才能让它更加自动化呢？
+我会改进后给出我的方案。
+如果你也在学习剪辑，或者对这个解决方案感兴趣，欢迎关注我。
+让我们一起突破技能边界，打造自己的效率工作流吧！&lt;/p></description></item><item><title>给Folder Slice重新设计一个图标</title><link>https://hunterji.com/zh-cn/post/%E7%BB%99folder-slice%E9%87%8D%E6%96%B0%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%9B%BE%E6%A0%87/</link><pubDate>Sat, 07 Dec 2024 00:00:00 +0000</pubDate><guid>https://hunterji.com/zh-cn/post/%E7%BB%99folder-slice%E9%87%8D%E6%96%B0%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%9B%BE%E6%A0%87/</guid><description>&lt;p>给&lt;a class="link" href="https://folderslice.com" target="_blank" rel="noopener"
 >Folder Slice&lt;/a>重新设计了一个图标，自我感觉还不错，哈哈～ 😄&lt;/p>
 &lt;p>&lt;img src="https://hunterji.com/zh-cn/post/%E7%BB%99folder-slice%E9%87%8D%E6%96%B0%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%9B%BE%E6%A0%87/cover.png"
 width="564"
